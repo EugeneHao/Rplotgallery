@@ -1,0 +1,31 @@
+--- 
+title: "R Plot Gallery"
+author: "Hao Sun"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::html_document2:
+    includes:
+      in_header: header.html
+  bookdown::gitbook:
+    includes:
+      in_header: header.html
+  
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# About {-}
+
+This bookdown includes some interesting ggplot examples and can be used as a manual of `ggplot2` and other packages. 
+
+```{r include=FALSE,}
+knitr::opts_chunk$set(fig.width=9, fig.height=6, fig.align = 'center', warning = F, message = F) 
+```

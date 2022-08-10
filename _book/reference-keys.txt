@@ -1,0 +1,2 @@
+notes-for-ggplot2
+r-plot-gallery
