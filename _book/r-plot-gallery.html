@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Hao Sun" />
 
 
-<meta name="date" content="2022-08-10" />
+<meta name="date" content="2022-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -693,11 +693,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
 <li class="chapter" data-level="1" data-path="notes-for-ggplot2.html"><a href="notes-for-ggplot2.html"><i class="fa fa-check"></i><b>1</b> Notes for ggplot2</a></li>
-<li class="chapter" data-level="2" data-path="r-plot-gallery.html"><a href="r-plot-gallery.html"><i class="fa fa-check"></i><b>2</b> R plot gallery</a>
-<ul>
-<li class="chapter" data-level="" data-path="r-plot-gallery.html"><a href="r-plot-gallery.html#multiple-95-confidence-intervals"><i class="fa fa-check"></i>Multiple 95% Confidence Intervals</a></li>
-<li class="chapter" data-level="" data-path="r-plot-gallery.html"><a href="r-plot-gallery.html#pirate-plot"><i class="fa fa-check"></i>Pirate Plot</a></li>
-</ul></li>
+<li class="chapter" data-level="2" data-path="r-plot-gallery.html"><a href="r-plot-gallery.html"><i class="fa fa-check"></i><b>2</b> R plot gallery</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -720,8 +716,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="r-plot-gallery" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> R plot gallery<a href="r-plot-gallery.html#r-plot-gallery" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="multiple-95-confidence-intervals" class="section level3 unnumbered hasAnchor">
-<h3>Multiple 95% Confidence Intervals<a href="r-plot-gallery.html#multiple-95-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="multiple-95-confidence-intervals" class="section level4 unnumbered hasAnchor">
+<h4>Multiple 95% Confidence Intervals<a href="r-plot-gallery.html#multiple-95-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="r-plot-gallery.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">12</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.05</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a href="r-plot-gallery.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lower =</span> value <span class="sc">-</span> <span class="fu">runif</span>(<span class="dv">12</span>, <span class="dv">0</span>, <span class="fl">0.4</span>), </span>
 <span id="cb1-3"><a href="r-plot-gallery.html#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">upper =</span> value <span class="sc">+</span> <span class="fu">runif</span>(<span class="dv">12</span>, <span class="dv">0</span>, <span class="fl">0.4</span>), </span>
@@ -736,7 +732,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-12"><a href="r-plot-gallery.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb1-13"><a href="r-plot-gallery.html#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Reduction Rate&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb1-14"><a href="r-plot-gallery.html#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, </span>
-<span id="cb1-15"><a href="r-plot-gallery.html#cb1-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;method 1&quot;</span>, <span class="st">&quot;method 2&quot;</span>, <span class="st">&quot;methond 3&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb1-15"><a href="r-plot-gallery.html#cb1-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;method 1&quot;</span>, <span class="st">&quot;method 2&quot;</span>, <span class="st">&quot;method 3&quot;</span>)) <span class="sc">+</span> </span>
 <span id="cb1-16"><a href="r-plot-gallery.html#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> est, <span class="at">xend =</span> est, </span>
 <span id="cb1-17"><a href="r-plot-gallery.html#cb1-17" aria-hidden="true" tabindex="-1"></a>                   <span class="at">y =</span> index <span class="sc">-</span> <span class="fl">0.1</span>, </span>
 <span id="cb1-18"><a href="r-plot-gallery.html#cb1-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">yend =</span> index <span class="sc">+</span> (<span class="fu">length</span>(<span class="fu">unique</span>(REG)))<span class="sc">/</span><span class="dv">10</span>)) <span class="sc">+</span> </span>
@@ -748,11 +744,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-24"><a href="r-plot-gallery.html#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">text=</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>))</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
-<div id="pirate-plot" class="section level3 unnumbered hasAnchor">
-<h3>Pirate Plot<a href="r-plot-gallery.html#pirate-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="r-plot-gallery.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(yarrr)</span>
+<div id="pirate-plot" class="section level4 unnumbered hasAnchor">
+<h4>Pirate Plot<a href="r-plot-gallery.html#pirate-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="r-plot-gallery.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(yarrr)</span>
 <span id="cb2-2"><a href="r-plot-gallery.html#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="r-plot-gallery.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pirateplot</span>(weight <span class="sc">~</span> Diet, </span>
+<span id="cb2-3"><a href="r-plot-gallery.html#cb2-3" aria-hidden="true" tabindex="-1"></a>yarrr<span class="sc">::</span><span class="fu">pirateplot</span>(weight <span class="sc">~</span> Diet, </span>
 <span id="cb2-4"><a href="r-plot-gallery.html#cb2-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> ChickWeight, </span>
 <span id="cb2-5"><a href="r-plot-gallery.html#cb2-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">main =</span> <span class="st">&quot;Pirate plot&quot;</span>, </span>
 <span id="cb2-6"><a href="r-plot-gallery.html#cb2-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">inf.method =</span> <span class="st">&quot;ci&quot;</span>, </span>
@@ -760,6 +756,412 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-8"><a href="r-plot-gallery.html#cb2-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">pal =</span> <span class="st">&quot;decision&quot;</span>, <span class="co"># use piratepal(palette = &quot;all&quot;) to check available palettes </span></span>
 <span id="cb2-9"><a href="r-plot-gallery.html#cb2-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">bar.f.o =</span> <span class="fl">0.2</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="864" style="display: block; margin: auto;" /></p>
+</div>
+<div id="beeswarm-plot" class="section level4 unnumbered hasAnchor">
+<h4>Beeswarm plot<a href="r-plot-gallery.html#beeswarm-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="r-plot-gallery.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ggbeeswarm)</span>
+<span id="cb3-2"><a href="r-plot-gallery.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="r-plot-gallery.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Species, Sepal.Length, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="r-plot-gallery.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="r-plot-gallery.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href="r-plot-gallery.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb3-7"><a href="r-plot-gallery.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="864" style="display: block; margin: auto;" /></p>
+</div>
+<div id="calendar" class="section level4 unnumbered hasAnchor">
+<h4>Calendar<a href="r-plot-gallery.html#calendar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="r-plot-gallery.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(sugrrants)</span>
+<span id="cb4-2"><a href="r-plot-gallery.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(lubridate)</span>
+<span id="cb4-3"><a href="r-plot-gallery.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="r-plot-gallery.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">date =</span> lubridate<span class="sc">::</span><span class="fu">ymd</span>(<span class="fu">strtrim</span>(<span class="fu">seq</span>(<span class="fu">ISOdate</span>(<span class="dv">2017</span>,<span class="dv">10</span>,<span class="dv">1</span>), <span class="fu">ISOdate</span>(<span class="dv">2018</span>,<span class="dv">2</span>,<span class="dv">28</span>), <span class="st">&quot;DSTday&quot;</span>),<span class="dv">10</span>)), </span>
+<span id="cb4-5"><a href="r-plot-gallery.html#cb4-5" aria-hidden="true" tabindex="-1"></a>           <span class="co"># or as.Date(&quot;2017-10-1&quot;) + 0:150</span></span>
+<span id="cb4-6"><a href="r-plot-gallery.html#cb4-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">n =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">151</span>, <span class="at">replace =</span> T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-7"><a href="r-plot-gallery.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  sugrrants<span class="sc">::</span><span class="fu">frame_calendar</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">date =</span> date) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="r-plot-gallery.html#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> .x, <span class="at">y =</span> .y)) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="r-plot-gallery.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Daily sold units&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="r-plot-gallery.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb4-11"><a href="r-plot-gallery.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, </span>
+<span id="cb4-12"><a href="r-plot-gallery.html#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="r-plot-gallery.html#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">x =</span> .x<span class="sc">+</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">13</span>)<span class="sc">/</span><span class="dv">2</span>, <span class="at">y =</span> .y<span class="sc">+</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">9</span>)<span class="sc">/</span><span class="dv">2</span>, <span class="at">fill =</span> n), <span class="at">colour =</span> <span class="st">&quot;grey50&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="r-plot-gallery.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">name =</span> <span class="st">&quot;&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;RdYlBu&quot;</span>) <span class="ot">-&gt;</span> p2.sale </span>
+<span id="cb4-15"><a href="r-plot-gallery.html#cb4-15" aria-hidden="true" tabindex="-1"></a>  sugrrants<span class="sc">::</span><span class="fu">prettify</span>(p2.sale, <span class="at">label =</span> <span class="fu">c</span>(<span class="st">&quot;label&quot;</span>, <span class="st">&quot;text&quot;</span>, <span class="st">&quot;text2&quot;</span>)) <span class="co"># label: month and year; text: weekday at the bottom; text2: day of month</span></span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="864" style="display: block; margin: auto;" /></p>
+</div>
+<div id="correlation-plot" class="section level4 unnumbered hasAnchor">
+<h4>Correlation Plot<a href="r-plot-gallery.html#correlation-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="r-plot-gallery.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(corrplot)</span>
+<span id="cb5-2"><a href="r-plot-gallery.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="r-plot-gallery.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="r-plot-gallery.html#cb5-4" aria-hidden="true" tabindex="-1"></a>  corrplot<span class="sc">::</span><span class="fu">corrplot</span>(., <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>, <span class="at">order =</span> <span class="st">&quot;hclust&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="864" style="display: block; margin: auto;" /></p>
+</div>
+<div id="table-visualization" class="section level4 unnumbered hasAnchor">
+<h4>Table Visualization<a href="r-plot-gallery.html#table-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="r-plot-gallery.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(formattable)</span>
+<span id="cb6-2"><a href="r-plot-gallery.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(DT)</span>
+<span id="cb6-3"><a href="r-plot-gallery.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="r-plot-gallery.html#cb6-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> </span>
+<span id="cb6-5"><a href="r-plot-gallery.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,  </span>
+<span id="cb6-6"><a href="r-plot-gallery.html#cb6-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Ashley&quot;</span>, <span class="st">&quot;James&quot;</span>, <span class="st">&quot;David&quot;</span>, <span class="st">&quot;Jenny&quot;</span>,</span>
+<span id="cb6-7"><a href="r-plot-gallery.html#cb6-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Hans&quot;</span>, <span class="st">&quot;Leo&quot;</span>, <span class="st">&quot;John&quot;</span>, <span class="st">&quot;Emily&quot;</span>, <span class="st">&quot;Lee&quot;</span>),   </span>
+<span id="cb6-8"><a href="r-plot-gallery.html#cb6-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">27</span>, <span class="dv">30</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">29</span>, <span class="dv">27</span>, <span class="dv">27</span>, <span class="dv">31</span>, <span class="dv">30</span>),  </span>
+<span id="cb6-9"><a href="r-plot-gallery.html#cb6-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">grade =</span> <span class="fu">c</span>(<span class="st">&quot;C&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;C&quot;</span>),  </span>
+<span id="cb6-10"><a href="r-plot-gallery.html#cb6-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">test1_score =</span> <span class="fu">c</span>(<span class="fl">8.9</span>, <span class="fl">9.5</span>, <span class="fl">9.6</span>, <span class="fl">8.9</span>, <span class="fl">9.1</span>, <span class="fl">9.3</span>, <span class="fl">9.3</span>, <span class="fl">9.9</span>, <span class="fl">8.5</span>, <span class="fl">8.6</span>),</span>
+<span id="cb6-11"><a href="r-plot-gallery.html#cb6-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">test2_score =</span> <span class="fu">c</span>(<span class="fl">9.1</span>, <span class="fl">9.1</span>, <span class="fl">9.2</span>, <span class="fl">9.1</span>, <span class="fl">8.9</span>, <span class="fl">8.5</span>, <span class="fl">9.2</span>, <span class="fl">9.3</span>, <span class="fl">9.1</span>, <span class="fl">8.8</span>),  </span>
+<span id="cb6-12"><a href="r-plot-gallery.html#cb6-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">final_score =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="fl">9.3</span>, <span class="fl">9.4</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="fl">8.9</span>, <span class="fl">9.25</span>, <span class="fl">9.6</span>, <span class="fl">8.8</span>, <span class="fl">8.7</span>),  </span>
+<span id="cb6-13"><a href="r-plot-gallery.html#cb6-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">registered =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>),</span>
+<span id="cb6-14"><a href="r-plot-gallery.html#cb6-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-15"><a href="r-plot-gallery.html#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="r-plot-gallery.html#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">formattable</span>(df, </span>
+<span id="cb6-17"><a href="r-plot-gallery.html#cb6-17" aria-hidden="true" tabindex="-1"></a>            <span class="fu">list</span>(<span class="at">age =</span> <span class="fu">color_tile</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;orange&quot;</span>),</span>
+<span id="cb6-18"><a href="r-plot-gallery.html#cb6-18" aria-hidden="true" tabindex="-1"></a>                 <span class="at">grade =</span> <span class="fu">formatter</span>(<span class="st">&quot;span&quot;</span>, </span>
+<span id="cb6-19"><a href="r-plot-gallery.html#cb6-19" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">style =</span> x <span class="sc">~</span> <span class="fu">ifelse</span>(x <span class="sc">==</span> <span class="st">&quot;A&quot;</span>, <span class="fu">style</span>(<span class="at">color =</span> <span class="st">&quot;green&quot;</span>, <span class="at">font.weight =</span> <span class="st">&quot;bold&quot;</span>), <span class="cn">NA</span>) ),    </span>
+<span id="cb6-20"><a href="r-plot-gallery.html#cb6-20" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">area</span>(<span class="at">col =</span> <span class="fu">c</span>(test1_score, test2_score)) <span class="sc">~</span> <span class="fu">normalize_bar</span>(<span class="st">&quot;pink&quot;</span>, <span class="fl">0.4</span>),              </span>
+<span id="cb6-21"><a href="r-plot-gallery.html#cb6-21" aria-hidden="true" tabindex="-1"></a>                 <span class="at">final_score =</span> <span class="fu">formatter</span>(<span class="st">&quot;span&quot;</span>,  <span class="at">style =</span> x <span class="sc">~</span> <span class="fu">style</span>(<span class="at">color =</span> <span class="fu">ifelse</span>(<span class="fu">rank</span>(<span class="sc">-</span>x) <span class="sc">&lt;=</span> <span class="dv">3</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;gray&quot;</span>)),</span>
+<span id="cb6-22"><a href="r-plot-gallery.html#cb6-22" aria-hidden="true" tabindex="-1"></a>                                         x <span class="sc">~</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.2f (rank: %02d)&quot;</span>, x, <span class="fu">rank</span>(<span class="sc">-</span>x))),</span>
+<span id="cb6-23"><a href="r-plot-gallery.html#cb6-23" aria-hidden="true" tabindex="-1"></a>                 <span class="at">registered =</span> <span class="fu">formatter</span>(<span class="st">&quot;span&quot;</span>, <span class="at">style =</span> x <span class="sc">~</span> <span class="fu">style</span>(<span class="at">color =</span> <span class="fu">ifelse</span>(x, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>)),</span>
+<span id="cb6-24"><a href="r-plot-gallery.html#cb6-24" aria-hidden="true" tabindex="-1"></a>                                        x <span class="sc">~</span> <span class="fu">icontext</span>(<span class="fu">ifelse</span>(x, <span class="st">&quot;ok&quot;</span>, <span class="st">&quot;remove&quot;</span>), <span class="fu">ifelse</span>(x, <span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>)))</span>
+<span id="cb6-25"><a href="r-plot-gallery.html#cb6-25" aria-hidden="true" tabindex="-1"></a>                 )</span>
+<span id="cb6-26"><a href="r-plot-gallery.html#cb6-26" aria-hidden="true" tabindex="-1"></a>            )</span></code></pre></div>
+<table class="table table-condensed">
+<thead>
+<tr>
+<th style="text-align:right;">
+id
+</th>
+<th style="text-align:right;">
+name
+</th>
+<th style="text-align:right;">
+age
+</th>
+<th style="text-align:right;">
+grade
+</th>
+<th style="text-align:right;">
+test1_score
+</th>
+<th style="text-align:right;">
+test2_score
+</th>
+<th style="text-align:right;">
+final_score
+</th>
+<th style="text-align:right;">
+registered
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+Bob
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffe8bf">28</span>
+</td>
+<td style="text-align:right;">
+<span>C</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 57.14%">8.9</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 65.71%">9.1</span>
+</td>
+<td style="text-align:right;">
+<span style="color: gray">9.00 (rank: 06)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">
+<i class="glyphicon glyphicon-ok"></i>
+Yes
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+Ashley
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">27</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green; font-weight: bold">A</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 82.86%">9.5</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 65.71%">9.1</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">9.30 (rank: 03)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">
+<i class="glyphicon glyphicon-remove"></i>
+No
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+James
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffbb3f">30</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green; font-weight: bold">A</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 87.14%">9.6</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 70.00%">9.2</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">9.40 (rank: 02)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">
+<i class="glyphicon glyphicon-ok"></i>
+Yes
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+David
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffe8bf">28</span>
+</td>
+<td style="text-align:right;">
+<span>C</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 57.14%">8.9</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 65.71%">9.1</span>
+</td>
+<td style="text-align:right;">
+<span style="color: gray">9.00 (rank: 06)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">
+<i class="glyphicon glyphicon-remove"></i>
+No
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+Jenny
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffd27f">29</span>
+</td>
+<td style="text-align:right;">
+<span>B</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 65.71%">9.1</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 57.14%">8.9</span>
+</td>
+<td style="text-align:right;">
+<span style="color: gray">9.00 (rank: 06)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">
+<i class="glyphicon glyphicon-ok"></i>
+Yes
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+Hans
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffd27f">29</span>
+</td>
+<td style="text-align:right;">
+<span>B</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 74.29%">9.3</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 40.00%">8.5</span>
+</td>
+<td style="text-align:right;">
+<span style="color: gray">8.90 (rank: 08)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">
+<i class="glyphicon glyphicon-ok"></i>
+Yes
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+Leo
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">27</span>
+</td>
+<td style="text-align:right;">
+<span>B</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 74.29%">9.3</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 70.00%">9.2</span>
+</td>
+<td style="text-align:right;">
+<span style="color: gray">9.25 (rank: 04)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">
+<i class="glyphicon glyphicon-ok"></i>
+Yes
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+John
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">27</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green; font-weight: bold">A</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 100.00%">9.9</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 74.29%">9.3</span>
+</td>
+<td style="text-align:right;">
+<span style="color: green">9.60 (rank: 01)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">
+<i class="glyphicon glyphicon-remove"></i>
+No
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+Emily
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffa500">31</span>
+</td>
+<td style="text-align:right;">
+<span>C</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 40.00%">8.5</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 65.71%">9.1</span>
+</td>
+<td style="text-align:right;">
+<span style="color: gray">8.80 (rank: 09)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">
+<i class="glyphicon glyphicon-remove"></i>
+No
+</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+Lee
+</td>
+<td style="text-align:right;">
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffbb3f">30</span>
+</td>
+<td style="text-align:right;">
+<span>C</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 44.29%">8.6</span>
+</td>
+<td style="text-align:right;">
+<span style="display: inline-block; direction: rtl; unicode-bidi: plaintext; border-radius: 4px; padding-right: 2px; background-color: pink; width: 52.86%">8.8</span>
+</td>
+<td style="text-align:right;">
+<span style="color: gray">8.70 (rank: 10)</span>
+</td>
+<td style="text-align:right;">
+<span style="color: red">
+<i class="glyphicon glyphicon-remove"></i>
+No
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="heatmap" class="section level4 unnumbered hasAnchor">
+<h4>Heatmap<a href="r-plot-gallery.html#heatmap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-plot-gallery.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Day, Month, <span class="at">fill =</span> Temp)) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="r-plot-gallery.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="r-plot-gallery.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>)) <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="r-plot-gallery.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb7-5"><a href="r-plot-gallery.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;A&quot;</span>) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="864" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="r-plot-gallery.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2</span></span>
+<span id="cb8-2"><a href="r-plot-gallery.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb8-3"><a href="r-plot-gallery.html#cb8-3" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">5</span><span class="sc">*</span><span class="dv">10</span>), <span class="at">ncol =</span> <span class="dv">10</span>)</span>
+<span id="cb8-4"><a href="r-plot-gallery.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mydata) <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>] </span>
+<span id="cb8-5"><a href="r-plot-gallery.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">heatmap</span>(mydata, </span>
+<span id="cb8-6"><a href="r-plot-gallery.html#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Colv = NA, # Rowv = NA,   # hide the clustering </span></span>
+<span id="cb8-7"><a href="r-plot-gallery.html#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;heatmap&quot;</span>, <span class="at">col =</span> <span class="fu">cm.colors</span>(<span class="dv">256</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="864" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

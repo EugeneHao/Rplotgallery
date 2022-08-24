@@ -1,8 +1,7 @@
 
-
 # R plot gallery
 
-### Multiple 95% Confidence Intervals {-}
+#### Multiple 95% Confidence Intervals {-}
 ```{r}
 data.frame(value = rnorm(12, mean = 0, sd = 0.05)) %>% 
   mutate(lower = value - runif(12, 0, 0.4), 
@@ -18,7 +17,7 @@ data.frame(value = rnorm(12, mean = 0, sd = 0.05)) %>%
   scale_color_brewer(palette = "Set1") + 
   labs(y = "", x = "Reduction Rate") + 
   scale_y_continuous(breaks = 1:3, 
-                     labels = c("method 1", "method 2", "methond 3")) + 
+                     labels = c("method 1", "method 2", "method 3")) + 
   geom_segment(aes(x = est, xend = est, 
                    y = index - 0.1, 
                    yend = index + (length(unique(REG)))/10)) + 
@@ -30,12 +29,11 @@ data.frame(value = rnorm(12, mean = 0, sd = 0.05)) %>%
         text= element_text(size = 15))
 ```
 
-
-### Pirate Plot {-}
+#### Pirate Plot {-}
 ```{r}
-library(yarrr)
+require(yarrr)
 
-pirateplot(weight ~ Diet, 
+yarrr::pirateplot(weight ~ Diet, 
            data = ChickWeight, 
            main = "Pirate plot", 
            inf.method = "ci", 
@@ -43,3 +41,95 @@ pirateplot(weight ~ Diet,
            pal = "decision", # use piratepal(palette = "all") to check available palettes 
            bar.f.o = 0.2)
 ```
+
+#### Beeswarm plot {-}
+```{r}
+require(ggbeeswarm)
+
+ggplot(iris, aes(Species, Sepal.Length, colour = Species)) +
+  geom_violin(width = 0.5) +
+  geom_beeswarm() +
+  theme_classic() +
+  scale_color_brewer(palette = "Set1")
+```
+
+
+
+#### Calendar {-}
+```{r}
+require(sugrrants)
+require(lubridate)
+
+data.frame(date = lubridate::ymd(strtrim(seq(ISOdate(2017,10,1), ISOdate(2018,2,28), "DSTday"),10)), 
+           # or as.Date("2017-10-1") + 0:150
+           n = sample(1:100, size = 151, replace = T)) %>% 
+  sugrrants::frame_calendar(x = 1, y = 1, date = date) %>% 
+  ggplot(aes(x = .x, y = .y)) +
+  ggtitle("Daily sold units") +
+  theme_bw() + 
+  theme(legend.position = "bottom", 
+        plot.title = element_text(hjust = 0.5)) +
+  geom_tile(aes(x = .x+(1/13)/2, y = .y+(1/9)/2, fill = n), colour = "grey50") +
+  scale_fill_distiller(name = "", palette = "RdYlBu") -> p2.sale 
+  sugrrants::prettify(p2.sale, label = c("label", "text", "text2")) # label: month and year; text: weekday at the bottom; text2: day of month
+```
+
+
+#### Correlation Plot {-}
+```{r}
+require(corrplot)
+
+cor(mtcars) %>% 
+  corrplot::corrplot(., type = "upper", order = "hclust")
+```
+
+#### Table Visualization {-}
+```{r fig.width=8}
+require(formattable)
+require(DT)
+
+df <- 
+  data.frame(id = 1:10,  
+             name = c("Bob", "Ashley", "James", "David", "Jenny",
+                      "Hans", "Leo", "John", "Emily", "Lee"),   
+             age = c(28, 27, 30, 28, 29, 29, 27, 27, 31, 30),  
+             grade = c("C", "A", "A", "C", "B", "B", "B", "A", "C", "C"),  
+             test1_score = c(8.9, 9.5, 9.6, 8.9, 9.1, 9.3, 9.3, 9.9, 8.5, 8.6),
+             test2_score = c(9.1, 9.1, 9.2, 9.1, 8.9, 8.5, 9.2, 9.3, 9.1, 8.8),  
+             final_score = c(9, 9.3, 9.4, 9, 9, 8.9, 9.25, 9.6, 8.8, 8.7),  
+             registered = c(TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE),
+             stringsAsFactors = FALSE)
+
+formattable(df, 
+            list(age = color_tile("white", "orange"),
+                 grade = formatter("span", 
+                                   style = x ~ ifelse(x == "A", style(color = "green", font.weight = "bold"), NA) ),    
+                 area(col = c(test1_score, test2_score)) ~ normalize_bar("pink", 0.4),              
+                 final_score = formatter("span",  style = x ~ style(color = ifelse(rank(-x) <= 3, "green", "gray")),
+                                         x ~ sprintf("%.2f (rank: %02d)", x, rank(-x))),
+                 registered = formatter("span", style = x ~ style(color = ifelse(x, "green", "red")),
+                                        x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes","No")))
+                 )
+            )
+```
+
+
+#### Heatmap {-}
+```{r}
+ggplot(airquality, aes(Day, Month, fill = Temp)) + 
+  geom_tile() + 
+  scale_x_continuous(breaks = seq(1:31)) + 
+  theme_bw() + 
+  scale_fill_viridis_c(option = "A") 
+```
+
+```{r}
+# Example 2
+set.seed(1234)
+mydata <- matrix(rnorm(5*10), ncol = 10)
+colnames(mydata) <- letters[1:10] 
+heatmap(mydata, 
+        # Colv = NA, # Rowv = NA,   # hide the clustering 
+        main = "heatmap", col = cm.colors(256))
+```
+
