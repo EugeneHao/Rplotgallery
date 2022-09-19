@@ -717,6 +717,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="notes-for-ggplot2" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Notes for ggplot2<a href="notes-for-ggplot2.html#notes-for-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<ol style="list-style-type: decimal">
+<li><code>stat_function</code>: add function curve</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="notes-for-ggplot2.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stat_function</span>(<span class="at">color =</span> <span class="st">&#39;blue&#39;</span>, <span class="at">fun=</span>dunif, <span class="at">args=</span><span class="fu">list</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">size=</span><span class="fl">1.2</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><code>geom_segment</code>: segment plot</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="notes-for-ggplot2.html#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(d2,</span>
+<span id="cb2-2"><a href="notes-for-ggplot2.html#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> lower,  <span class="co">#横向线段</span></span>
+<span id="cb2-3"><a href="notes-for-ggplot2.html#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">xend  =</span> upper,</span>
+<span id="cb2-4"><a href="notes-for-ggplot2.html#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">y     =</span> county,</span>
+<span id="cb2-5"><a href="notes-for-ggplot2.html#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">yend  =</span> county))<span class="sc">+</span></span>
+<span id="cb2-6"><a href="notes-for-ggplot2.html#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_segment</span>(<span class="at">lwd=</span><span class="dv">1</span>, <span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="notes-for-ggplot2.html#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;mean&#39;</span>, <span class="at">y=</span><span class="st">&quot;county&quot;</span>, <span class="at">title=</span><span class="st">&#39;95% Credible Intervals&#39;</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="notes-for-ggplot2.html#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">scale_color_brewer</span>(<span class="at">palette=</span><span class="st">&#39;Set1&#39;</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="notes-for-ggplot2.html#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">scale_y_reverse</span>() <span class="sc">+</span></span>
+<span id="cb2-10"><a href="notes-for-ggplot2.html#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_bw</span>()</span></code></pre></div>
+<blockquote>
+<p>Remark: change segment line type, color and width:<br />
+- <code>scale_linetype_manual(values=c("twodash", "dotted")) #（"solid", "twodash", "dotted", "longdash", "dotdash", "dashed", "blank")</code><br />
+- <code>scale_color_manual(values=c('#999999','#E69F00'))</code><br />
+- <code>scale_size_manual(values=c(1, 1.5))</code></p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><code>theme</code>:</li>
+</ol>
+<ul>
+<li><code>theme(legend.position='none')</code>: hide legend,</li>
+<li><code>axis.title.y = element_blank()</code>: remove y axis name (or <code>ylab()</code>)</li>
+<li><code>axis.text.x = element_text(angle = 45)</code>: adjust x axis text angle</li>
+<li><code>plot.title = element_text(hjust = 0.5)</code>: <strong>center title</strong></li>
+<li><code>text=element_text(size=15)</code>: <strong>change font size</strong>
+<ul>
+<li>use <code>base_size = 15</code> in <code>theme_xx()</code></li>
+<li>use <code>family = "xxx"</code> to change font family</li>
+</ul></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><code>ggpubr::arrange(p1, p2, ..., ncol = )</code>: plot multiple ggplots in one figure</li>
+</ol>
+<ul>
+<li>Or <code>gridExtra::grid.arrange(..., ncol = )</code></li>
+<li>Or <code>require(cowplot)</code></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="notes-for-ggplot2.html#cb3-1" aria-hidden="true" tabindex="-1"></a>myplots <span class="ot">=</span> <span class="fu">vector</span>(<span class="st">&quot;list&quot;</span>, n) </span>
+<span id="cb3-2"><a href="notes-for-ggplot2.html#cb3-2" aria-hidden="true" tabindex="-1"></a>myplot[[i]]<span class="ot">&lt;-</span> <span class="fu">ggplot</span>(...) </span>
+<span id="cb3-3"><a href="notes-for-ggplot2.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(<span class="at">plotlist=</span>myplots)</span></code></pre></div>
+<ul>
+<li>Or <code>require(grid)</code></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="notes-for-ggplot2.html#cb4-1" aria-hidden="true" tabindex="-1"></a>        <span class="fu">grid.newpage</span>()  <span class="co">#新建图表版面</span></span>
+<span id="cb4-2"><a href="notes-for-ggplot2.html#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">pushViewport</span>(<span class="fu">viewport</span>(<span class="at">layout =</span> <span class="fu">grid.layout</span>(<span class="dv">2</span>,<span class="dv">2</span>))) <span class="co">#将版面分成2*2矩阵</span></span>
+<span id="cb4-3"><a href="notes-for-ggplot2.html#cb4-3" aria-hidden="true" tabindex="-1"></a>        vplayout <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y){<span class="fu">viewport</span>(<span class="at">layout.pos.row =</span> x, <span class="at">layout.pos.col =</span> y)}  </span>
+<span id="cb4-4"><a href="notes-for-ggplot2.html#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(chart3, <span class="at">vp =</span> <span class="fu">vplayout</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>))   <span class="co">#将（1,1)和(1,2)的位置画图chart3</span></span>
+<span id="cb4-5"><a href="notes-for-ggplot2.html#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(chart2, <span class="at">vp =</span> <span class="fu">vplayout</span>(<span class="dv">2</span>,<span class="dv">1</span>))     <span class="co">#将(2,1)的位置画图chart2          </span></span>
+<span id="cb4-6"><a href="notes-for-ggplot2.html#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(chart1 , <span class="at">vp =</span> <span class="fu">vplayout</span>(<span class="dv">2</span>,<span class="dv">2</span>))    <span class="co">#将（2,2)的位置画图chart1</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li><code>scale_y_log10()</code>: tale log of y axis</li>
+<li><code>geom_hline()</code>, <code>geom_vline()</code>, <code>geom_abline</code></li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="notes-for-ggplot2.html#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">25</span>, <span class="at">color=</span><span class="st">&quot;orange&quot;</span>, <span class="at">size=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="notes-for-ggplot2.html#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">&quot;orange&quot;</span>, <span class="at">size=</span><span class="dv">1</span></span></code></pre></div>
+<ol start="7" style="list-style-type: decimal">
+<li><code>geom_errorbar()</code>: boxplot or scatterplot add confidence interval</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="notes-for-ggplot2.html#cb6-1" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_gain<span class="fl">-1.96</span><span class="sc">*</span>sd_gain, </span>
+<span id="cb6-2"><a href="notes-for-ggplot2.html#cb6-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ymax =</span> mean_gain<span class="fl">+1.96</span><span class="sc">*</span>sd_gain, <span class="at">colour =</span> Diet), <span class="at">data =</span> ChickError)</span></code></pre></div>
+<ol start="8" style="list-style-type: decimal">
+<li><code>forcats::fct_inorder</code>: Reorder factor levels by first appearance, frequency, or numeric order</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="notes-for-ggplot2.html#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Roads&quot;</span>, <span class="st">&quot;Canals&quot;</span>, <span class="st">&quot;Early railways&quot;</span>, <span class="st">&quot;Railways&quot;</span>), <span class="at">each =</span> <span class="dv">3</span>))</span>
+<span id="cb7-2"><a href="notes-for-ggplot2.html#cb7-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%&gt;%</span> <span class="fu">fct_inorder</span>() <span class="sc">%&gt;%</span> <span class="fu">levels</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;Roads&quot;          &quot;Canals&quot;         &quot;Early railways&quot; &quot;Railways&quot;</code></pre>
 
 </div>
             </section>

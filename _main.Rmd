@@ -1,3 +1,35 @@
+--- 
+title: "R Table & Plot Gallery"
+author: "Hao Sun"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::html_document2:
+    includes:
+      in_header: header.html
+  bookdown::gitbook:
+    includes:
+      in_header: header.html
+  
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# url: your book url like https://bookdown.org/yihui/bookdown
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
 # Notes for ggplot2 
 
 1. `stat_function`: add function curve
@@ -71,4 +103,30 @@ a = factor(rep(c("Roads", "Canals", "Early railways", "Railways"), each = 3))
 a %>% fct_inorder() %>% levels()
            
 ```
+
+
+<!--chapter:end:01.Rmd-->
+
+
+# R plot gallery
+
+Placeholder
+
+
+#### Contents {-}
+#### Multiple 95% Confidence Intervals {-}
+#### Pirate Plot {-}
+#### Beeswarm plot {-}
+#### Bar Plot {-}
+#### Calendar {-}
+#### Correlation Plot {-}
+#### Table Visualization {-}
+#### Heatmap {-}
+#### Compare Two Group Means {-}
+
+<!--chapter:end:02.Rmd-->
+
+# R DT Table 
+
+<!--chapter:end:03.Rmd-->
 

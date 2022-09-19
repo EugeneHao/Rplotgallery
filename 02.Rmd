@@ -67,8 +67,7 @@ ggplot(iris, aes(Species, Sepal.Length, colour = Species)) +
 #### Bar Plot {-}
 ```{r}
 dat2 <- data.frame(
-  categ = factor(rep(c("Roads", "Canals", "Early railways", "Railways"), each = 3), 
-                 levels = c("Roads", "Canals", "Early railways", "Railways")), 
+  categ = rep(c("Roads", "Canals", "Early railways", "Railways"), each = 3) %>% fct_inorder(), 
   group =  rep(c("Maximum", "Mean", "Minimum"), 4), 
   fill = as.character(c(1,1,1,1,1,1, 2, 1, 3, 1,1,1)), 
   pattern = c(rep("N", 6), "D", rep("N", 5)), 
@@ -93,7 +92,7 @@ ggplot(dat2) +
   scale_y_continuous(breaks = c(0, 2, 4, 6, 8, 10, 12, 14)) + 
   labs(x = NULL, y = "Pence") + 
   theme_bw() + 
-  theme(text = element_text(size = 15)) 
+  theme(text = element_text(size = 15), axis.text.y = element_text(angle = 30, hjust = 1)) 
 ```
 
 
