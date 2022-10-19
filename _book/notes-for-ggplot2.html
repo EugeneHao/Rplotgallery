@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Hao Sun" />
 
 
-<meta name="date" content="2022-09-18" />
+<meta name="date" content="2022-09-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -785,7 +785,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="notes-for-ggplot2.html#cb6-1" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_gain<span class="fl">-1.96</span><span class="sc">*</span>sd_gain, </span>
 <span id="cb6-2"><a href="notes-for-ggplot2.html#cb6-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ymax =</span> mean_gain<span class="fl">+1.96</span><span class="sc">*</span>sd_gain, <span class="at">colour =</span> Diet), <span class="at">data =</span> ChickError)</span></code></pre></div>
 <ol start="8" style="list-style-type: decimal">
-<li><code>forcats::fct_inorder</code>: Reorder factor levels by first appearance, frequency, or numeric order</li>
+<li><code>forcats::fct_inorder</code>: <strong>Reorder factor levels by first appearance, frequency, or numeric order</strong></li>
 </ol>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="notes-for-ggplot2.html#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Roads&quot;</span>, <span class="st">&quot;Canals&quot;</span>, <span class="st">&quot;Early railways&quot;</span>, <span class="st">&quot;Railways&quot;</span>), <span class="at">each =</span> <span class="dv">3</span>))</span>
 <span id="cb7-2"><a href="notes-for-ggplot2.html#cb7-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%&gt;%</span> <span class="fu">fct_inorder</span>() <span class="sc">%&gt;%</span> <span class="fu">levels</span>()</span></code></pre></div>
