@@ -68,7 +68,7 @@ plot_grid(plotlist=myplots)
 8. `forcats::fct_inorder`: **Reorder factor levels by first appearance, frequency, or numeric order**
 ```{r}
 a = factor(rep(c("Roads", "Canals", "Early railways", "Railways"), each = 3))
-a %>% fct_inorder() %>% levels()
+a %>% forcats::fct_inorder() %>% levels()
            
 ```
 
