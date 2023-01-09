@@ -13,4 +13,8 @@ h4:heatmap Heatmap
 h4:compare-two-group-means Compare Two Group Means
 h4:add-p-value Add p-value
 h4:missing-data-in-time-series Missing Data in Time Series
+h4:state-map-with-fill-in-color State Map with Fill-in Color
+h4:animation-plot Animation plot
+h4:dumbbell-chart Dumbbell Chart
+h4:encircle-points Encircle Points
 

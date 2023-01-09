@@ -15,6 +15,10 @@
 + [Compare Two Group Means](#compare-two-group-means)
 + [Add p-value](#add-p-value)
 + [Missing Data in Time Series](#missing-data-in-time-series)
++ [State Map with Fill-in Color](#state-map-with-fill-in-color)
++ [Animiation Plot](#animation-plot)
++ [Dumbbell Chart](#dumbbell-chart)
++ [Encircle Points](#encircle-points)
 
 
 #### Multiple 95% Confidence Intervals {-}
@@ -46,7 +50,7 @@ data.frame(value = rnorm(12, mean = 0, sd = 0.05)) %>%
 ```
 
 #### Pirate Plot {-}
-```{r}
+```{r warning=F, message=F}
 require(yarrr)
 
 yarrr::pirateplot(weight ~ Diet, 
@@ -59,7 +63,7 @@ yarrr::pirateplot(weight ~ Diet,
 ```
 
 #### Beeswarm plot {-}
-```{r}
+```{r warning=F, message=F}
 require(ggbeeswarm)
 
 ggplot(iris, aes(Species, Sepal.Length, colour = Species)) +
@@ -70,7 +74,7 @@ ggplot(iris, aes(Species, Sepal.Length, colour = Species)) +
 ```
 
 #### Bar Plot {-}
-```{r}
+```{r warning=F, message=F}
 dat2 <- data.frame(
   categ = rep(c("Roads", "Canals", "Early railways", "Railways"), each = 3) %>% forcats::fct_inorder(), 
   group =  rep(c("Maximum", "Mean", "Minimum"), 4), 
@@ -100,7 +104,7 @@ ggplot() +
   theme(text = element_text(size = 15), axis.text.y = element_text(angle = 30, hjust = 1)) 
 ```
 
-```{r}
+```{r warning=F, message=F}
 getrank <- function(data)
 {
   group <- nrow(data)/4
@@ -145,7 +149,7 @@ data.frame(curve = rep(1:4, each = 4),
 
 
 #### Multi-row x-axis labels {-}
-```{r}
+```{r warning=F, message=F}
 set.seed(1)
 df=data.frame(year=rep(2009:2013,each=4),
               quarter=rep(c("Q1","Q2","Q3","Q4"),5),
@@ -165,7 +169,7 @@ ggplot(data = df, aes(x = interaction(year, quarter, lex.order = TRUE),
         panel.grid.minor.x = element_blank())
 ```
 
-```{r}
+```{r warning=F, message=F}
 ggplot(mtcars, aes(wt, mpg)) +  
   geom_point() +  
   labs(x = paste0("<span style='font-size: 11pt'>This is the axis of</span><br>
@@ -178,7 +182,7 @@ ggplot(mtcars, aes(wt, mpg)) +
 
 
 #### Calendar {-}
-```{r}
+```{r warning=F, message=F}
 require(sugrrants)
 require(lubridate)
 
@@ -200,7 +204,7 @@ data.frame(date = lubridate::ymd(strtrim(seq(ISOdate(2017,10,1), ISOdate(2018,2,
 
 
 #### Correlation Plot {-}
-```{r}
+```{r warning=F, message=F}
 require(corrplot)
 
 cor(mtcars) %>% 
@@ -208,7 +212,7 @@ cor(mtcars) %>%
 ```
 
 #### Survival Analysis {-}
-```{r}
+```{r warning=F, message=F}
 library(survival) 
 library(survminer)
 
@@ -234,7 +238,7 @@ p1$plot <- p1$plot + annotate("text", x = 750, y = 70, # 注明x和y轴的位置
 p1
 ```
 
-```{r}
+```{r warning=F, message=F}
 library(ggsurvfit)
 mymodel <- survfit2(Surv(time, status) ~ surg, data = df_colon)
 
@@ -255,7 +259,7 @@ ggforest(cox_model)
 
 
 #### Table Visualization {-}
-```{r fig.width=8}
+```{r fig.width=8, warning=F, message=F}
 require(formattable)
 require(DT)
 
@@ -305,7 +309,7 @@ heatmap(mydata,
 ```
 
 #### Compare Two Group Means {-}
-```{r}
+```{r warning=F, message=F}
 
 require(dabestr)
 
@@ -339,7 +343,7 @@ ggplot(iris, aes(Species, Sepal.Length)) +
 #### Missing Data in Time Series {-}
 > [Soure link](https://mp.weixin.qq.com/s/MekOqUwbSeyw4SHNDVcLCQ)
 
-```{r}
+```{r warning=F, message=F}
 library(imputeTS)
 ggplot_na_distribution(tsAirgap)   
 
@@ -348,5 +352,249 @@ data_imputation <- na_interpolation(tsAirgap, option = "linear")
 ggplot_na_imputations(tsAirgap, data_imputation, tsAirgapComplete)
 
 
+```
+
+
+#### State Map with Fill-in Color {-}
+
++ Example 1 
+```{r warning = F, message = F}
+library(usmap)
+library(sf)
+
+d <- us_map("counties") %>% dplyr::filter(abbr == "IA")
+d$county <- substr(d$county, 1, nchar(d$county) - 7)   # remove string " county"
+d$group <- d$county
+d <- d %>% arrange(group)
+
+database <- data.frame(county = d$county %>% unique(), 
+                       erosion = rbeta(99, 2, 4) * 14) %>% 
+  mutate(erolv = cut(erosion, breaks = c(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5:13, 100), 
+                     labels = c(paste0("C", 1:19))))
+
+# color code
+colorvalues <- c("C1" = "#83858c", "C2" = "#6d7985", "C3" = "#62807c", "C4" = "#4b734c", 
+                 "C5" = "#4a734c", "C6" = "#667c3e", "C7" = "#748036", "C8" = "#5f7824", 
+                 "C9" = "#978e24", "C10"= "#977f17", "C11"= "#90651b", "C12"= "#8a4c1b", 
+                 "C13"= "#82341a", "C14"= "#781e1a", "C15"= "#571528", "C16"= "#3a132b", 
+                 "C17"= "#2e1739", "C18"= "#1a0b1d", "C19"= "#110a16")
+# polygon 
+USS <- lapply(split(d, d$county), function(x) {
+  if(length(table(x$piece)) == 1)
+  {
+    st_polygon(list(cbind(x$x, x$y)))
+  }
+  else
+  {
+    st_multipolygon(list(lapply(split(x, x$piece), function(y) cbind(y$x, y$y))))
+  }
+})
+
+tmp  <- st_sfc(USS, crs = usmap_crs()@projargs)
+tmp  <- st_sf(data.frame(database, geometry = tmp))
+tmp$centroids <- st_centroid(tmp$geometry)
+
+ggplot() + geom_sf(data = tmp) +
+  geom_sf(aes(fill = erolv), color = "white",  data = tmp) +
+  geom_sf_text(aes(label = county, geometry = centroids), colour = "black", size = 3.5, data = tmp) +
+    scale_fill_manual(values = colorvalues, 
+                    labels = c("[0, 0.5)", "[0.5, 1)", "[1, 1.5)", "[1.5, 2)", "[2, 2.5)", 
+                               "[2.5, 3)", "[3, 3.5)", "[3.5, 4)", "[4, 4.5)", "[4.5, 5)",
+                               "[5, 6)", "[6,7)", "[7, 8)", "[8, 9)", "[9, 10)", "[10, 11)", 
+                               "[11, 12)", "[12, 13)", ">= 13")) +    # change legend names and colors 
+  ggtitle("Iowa") + 
+  guides(fill = guide_legend(title = NULL)) +   # remove legend title
+  theme_void() + theme(plot.title = element_text(hjust = 0.5))
+
+```
+
++ Example 2
+```{r message = F, warning=F}
+library(usmap)
+library(sf)
+library(survey)
+data(api)
+d <- us_map("counties") %>% dplyr::filter(abbr == "CA")
+d$county <- substr(d$county, 1, nchar(d$county) - 7)
+d$group <- d$county
+# combine some counties together
+d$group[d$county %in% c("Del Norte", "Trinity")] <- "Humboldt"
+d$group[d$county %in% c("Siskiyou", "Modoc", "Lassen")] <- "Shasta"
+d$group[d$county %in% c("Lake")] <- "Mendocino"
+d$group[d$county %in% c("Tehama", "Glenn", "Colusa", "Yuba", "Sierra", "Plumas")] <- "Butte"
+d$group[d$county %in% c("Sutter", "Nevada")] <- "Placer"
+d$group[d$county %in% c("Napa")] <- "Yolo"
+d$group[d$county %in% c("Amador")] <- "Sacramento"
+d$group[d$county %in% c("Calaveras")] <- "San Joaquin"
+d$group[d$county %in% c("Tuolumne", "Alpine", "Mono", "Mariposa")] <- "Stanislaus"
+d$group[d$county %in% c("Kings", "Madera")] <- "Fresno"
+d$group[d$county %in% c("Inyo")] <- "San Bernardino"
+d$group[d$county %in% c("San Benito")] <- "Monterey"
+
+
+USS <- lapply(split(d, d$county), function(x) {
+  if(length(table(x$piece)) == 1)
+  {
+    st_polygon(list(cbind(x$x, x$y)))
+  }
+  else
+  {
+    st_multipolygon(list(lapply(split(x, x$piece), function(y) cbind(y$x, y$y))))
+  }
+})
+
+USSgroup <- list()
+mygroup <- unique(d$group)
+for(i in 1:length(mygroup))
+{
+  element <- d %>% dplyr::filter(group == mygroup[i]) %>% "$"(county) %>% unique()
+  if(length(element) == 1)
+  {
+    USSgroup[[i]] <- USS[element][[1]]
+  }
+  else
+  {
+    tmp <- st_union(USS[element[1]][[1]], USS[element[2]][[1]])
+    if(length(element) > 2)
+    for(j in 3:length(element))
+    {
+      tmp <- st_union(tmp, USS[element[j]][[1]])
+    }
+    USSgroup[[i]] <- tmp
+  }
+}
+
+names(USSgroup) <- mygroup
+
+# school data: 
+data(api)
+df <- apipop %>% group_by(cname) %>% summarise(num = n()) %>% 
+  add_row(., cname = "Alpine", num = 0) %>% 
+  arrange(cname) %>% "colnames<-"(c("county", "num"))
+
+df$group <- df$county
+df$group[df$county %in% c("Del Norte", "Trinity")] <- "Humboldt"
+df$group[df$county %in% c("Siskiyou", "Modoc", "Lassen")] <- "Shasta"
+df$group[df$county %in% c("Lake")] <- "Mendocino"
+df$group[df$county %in% c("Tehama", "Glenn", "Colusa", "Yuba", "Sierra", "Plumas")] <- "Butte"
+df$group[df$county %in% c("Sutter", "Nevada")] <- "Placer"
+df$group[df$county %in% c("Napa")] <- "Yolo"
+df$group[df$county %in% c("Amador")] <- "Sacramento"
+df$group[df$county %in% c("Calaveras")] <- "San Joaquin"
+df$group[df$county %in% c("Tuolumne", "Alpine", "Mono", "Mariposa")] <- "Stanislaus"
+df$group[df$county %in% c("Kings", "Madera")] <- "Fresno"
+df$group[df$county %in% c("Inyo")] <- "San Bernardino"
+df$group[df$county %in% c("San Benito")] <- "Monterey"
+
+dfgroup <- df %>% group_by(group) %>% summarise(num = sum(num))
+
+CA  <- st_sfc(USS, crs = usmap_crs()@projargs)
+CA  <- st_sf(data.frame(df, geometry = CA))
+CA$centroids <- st_centroid(CA$geometry)
+
+CAgroup  <- st_sfc(USSgroup, crs = usmap_crs()@projargs)
+CAgroup <- st_sf(data.frame(dfgroup, geometry = CAgroup))
+CAgroup$centroids <- st_centroid(CAgroup$geometry)
+
+# show the number of schools in each county group
+ggplot() + geom_sf(data = CA) + 
+  geom_sf(aes(fill = group, alpha = 0.4), color = "white",  data = CAgroup) + 
+  geom_sf_text(aes(label = num, geometry = centroids), colour = "black", size = 4.5, data = CAgroup) +
+  # scale_fill_manual(values = c("#67b5e3",  "#ffada2","#1155b6",
+  #                              "#ed4747", "#cccccc"), guide = guide_none()) +
+  theme_void() + theme(legend.position='none')
+```
+
+#### Animation plot {-}
+```{r message = F, warning=F}
+invisible(capture.output(
+  lapply(c("sf", "usmap", "gganimate", "gifski"), require, character.only = TRUE)
+))
+
+rawd <- us_map("counties") %>% dplyr::filter(abbr == "IA")
+rawd$county <- substr(rawd$county, 1, nchar(rawd$county) - 7)
+rawd$group <- rawd$county
+d <- rawd %>% arrange(group)
+  
+  
+database <- data.frame(county = rep(d$county %>% unique(), 20),
+                       year = rep(2001:2020, each = 99), 
+                       Value = round(rbeta(99 * 20, 2, 20) * 100, 1)) %>%
+    mutate(level = cut(Value, breaks = c(0, 3, 5, 7, 9, 100), labels = c("VeryLow", "Low", "Medium", "High", "VeryHigh")))
+  
+colorvalues <- c("VeryHigh" = "#ed4747", "High" = "#ffada2", "Medium" = "#cccccc", "Low" = "#67b5e3", "VeryLow" = "#1155b6")
+
+
+database <- database %>% arrange(year, county)
+  
+USS <- lapply(split(d, d$county), function(x) {
+  if(length(table(x$piece)) == 1)
+  {
+    st_polygon(list(cbind(x$x, x$y)))
+  }
+  else
+  {
+    st_multipolygon(list(lapply(split(x, x$piece), function(y) cbind(y$x, y$y))))
+  }
+})
+  
+spdata  <- st_sfc(USS, crs = usmap_crs()@projargs)
+tmp <- data.frame()
+for(yr in 2001:2020)
+{
+  tmp <- rbind(tmp, st_sf(data.frame(database %>% dplyr::filter(year == yr), geometry = spdata)))
+}
+tmp$centroids <- st_centroid(tmp$geometry)
+
+tmp <- cbind(tmp, do.call(rbind, st_geometry(tmp$centroids)) %>% 
+               as_tibble() %>% setNames(c("lon","lat")))
+  
+originplot = ggplot() + 
+  geom_sf(aes(fill = level, alpha = 0.4), color = "white",  data = tmp) +
+  scale_fill_manual(values = colorvalues, guide = guide_none()) + 
+  theme_void() + theme(legend.position='none', plot.title = element_text(hjust = 0.5))
+  
+animateplot = originplot +  
+  geom_text(aes(y = lat, x = lon, label = Value), 
+            colour = "black", size = 4.5, data = tmp) +
+  geom_text(data = tmp, 
+            aes(x = median(lon), y = min(lat) - abs(max(lat) - min(lat))/4, 
+                label = paste("UR In", "Iowa", "In", year)),
+            colour = "black", size = 5) +
+  transition_states(states = year) 
+  
+animate(animateplot, renderer = gifski_renderer(), fps = 5, duration = 10)
+```
+
+#### Dumbbell Chart {-}
+```{r warning=F, message=F}
+library(ggalt)
+library(hrbrthemes)
+
+mydata <- data.frame(type = LETTERS[1:6], 
+                      pre = c(20, 40, 10, 30, 50, 60), 
+                      post = c(70, 50, 30, 60, 80, 80))
+
+ggplot(mydata, aes(y = type, x = pre, xend = post)) + 
+  geom_dumbbell(size = 3, 
+                colour = "grey85", # 连接两点的条带颜色
+                colour_x = "firebrick", # pre的颜色
+                colour_xend = "forestgreen", # post的颜色
+                dot_guide = TRUE, 
+                dot_guide_size = 0.5) +
+  labs(x = "", 
+       y = "", 
+       title = "Dumbbell charts") + 
+  theme_ipsum() +    # from hrbrthemes package
+  theme(panel.grid.major.y = element_blank())
+```
+
+#### Encircle Points {-}
+```{r}
+ggplot(iris, aes(Sepal.Length, Sepal.Width)) + 
+  geom_point() + 
+  geom_encircle(data = subset(iris, Sepal.Width < 2.5 & Sepal.Length > 5.5), s_shape = 0) +  # encircle points 
+  geom_point(data = subset(iris, Sepal.Width < 2.5 & Sepal.Length > 5.5),   # mark as blue 
+             colour = "steelblue", size = 2.5)
 ```
 

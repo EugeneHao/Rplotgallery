@@ -26,7 +26,7 @@ stat_function(color = 'blue', fun=dunif, args=list(0,1),size=1.2)
 
 3. `theme`: 
 
-+ `theme(legend.position='none')`: hide legend, 
++ `theme(legend.position='none')`: hide legend
 + `axis.title.y = element_blank()`: remove y axis name  (or `ylab()`) 
 + `axis.text.x = element_text(angle = 45)`: adjust x axis text angle 
 + ` plot.title = element_text(hjust = 0.5)`: **center title**
@@ -71,4 +71,4 @@ a = factor(rep(c("Roads", "Canals", "Early railways", "Railways"), each = 3))
 a %>% forcats::fct_inorder() %>% levels()
            
 ```
-
+9. `guides(fill = guide_legend(title = NULL))`: remove legend title

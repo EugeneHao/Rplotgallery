@@ -26,6 +26,6 @@ github-repo: rstudio/bookdown-demo
 
 This bookdown includes some interesting table and figure examples. It can be used as a manual of `ggplot2`, `DT`, `plotly`. 
 
-```{r include=FALSE,}
+```{r include=FALSE}
 knitr::opts_chunk$set(fig.width=9, fig.height=6, fig.align = 'center', warning = F, message = F) 
 ```
