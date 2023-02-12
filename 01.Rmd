@@ -34,7 +34,7 @@ stat_function(color = 'blue', fun=dunif, args=list(0,1),size=1.2)
   - use `base_size = 15` in `theme_xx()`
   - use `family = "xxx"` to change font family
 
-4. `ggpubr::arrange(p1, p2, ..., ncol = )`: plot multiple ggplots in one figure 
+4. `ggpubr::ggarrange(p1, p2, ..., ncol = )`: plot multiple ggplots in one figure 
 + Or `gridExtra::grid.arrange(..., ncol = )`
 + Or `require(cowplot)` 
 ```{r eval = F}
