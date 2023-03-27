@@ -25,6 +25,8 @@
 
 #### Multiple 95% Confidence Intervals {-}
 ```{r}
+set.seed(123)
+
 data.frame(value = rnorm(12, mean = 0, sd = 0.05)) %>% 
   mutate(lower = value - runif(12, 0, 0.4), 
          upper = value + runif(12, 0, 0.4), 
@@ -68,6 +70,48 @@ ggplot(data = tmp, aes(y = value, x = time, group = type,  shape = type, linetyp
   theme(legend.title=element_blank(),legend.position="right") +
   geom_vline(aes(xintercept = 2016), color = "red", linetype = "dashed")
 ```
+
+
+Example 2 {-}
+
+```{r}
+dat <- data.frame(year = rep(2001:2021, 4),
+                  profit = rnorm(84, sd = 50) + c((1:21) * 5, (1:21) * 10, (1:21) * 15, (1:21) * 20), 
+                  crop = rep(c("corn", "rice", "soybean", "wheat"), each = 21), 
+                  impute = sample(c(TRUE, FALSE), size = 84, replace = T, prob = c(0.1, 0.9)))
+
+ggplot(data = dat, aes(y = profit, x = year, group = crop)) + 
+  geom_point(aes(color = interaction(crop, impute, sep = "_"), shape = impute), size = 2.5) +
+  geom_line(aes(color = crop), size = 1) +
+  xlab("Year") + ylab("Expected Profit") +
+  labs(group = "crop") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(legend.title = element_blank(), legend.position = "right") +
+  scale_shape_discrete(name = "", labels = c("Corn","Rice","Soybean", "Wheat")) +
+  geom_vline(aes(xintercept = 2016), color = "red", linetype = "dashed") +
+  geom_hline(aes(yintercept = 0), color = "grey") +
+  scale_x_continuous(breaks = seq(2000, 2022, 5)) +
+  scale_y_continuous(breaks = seq(-300, 1000, 200)) +
+  scale_color_manual(name = "",
+                     values = c("corn_FALSE" = "#E69F00", "corn_TRUE" = "black",
+                                "rice_FALSE" = "#56B4E9", "rice_TRUE" = "black",
+                                "soybean_FALSE" = "#009E73", "soybean_TRUE" = "black",
+                                "wheat_FALSE" = "purple", "wheat_TRUE" = "black", 
+                                "corn" = "#E69F00", 
+                                "rice" = "#56B4E9", 
+                                "soybean" = "#009E73", 
+                                "wheat" = "purple"),
+                     labels = c("Corn", "Rice", "Soybean", "Wheat"), 
+                     breaks = c("corn_FALSE", "rice_FALSE", "soybean_FALSE", "wheat_FALSE")) +
+  guides(shape = 'none', # remove the shape legend
+         color = guide_legend(override.aes = list(
+           color = c("#E69F00", "#56B4E9", "#009E73", "purple"),
+           size = 1,
+           label = c("Corn", "Rice", "Soybean", "Wheat")
+         ))) +
+  theme_bw()
+```
+
 
 #### Boxplot with Regression Result {-}
 ```{r warning=F, message=F}
@@ -182,6 +226,26 @@ data.frame(curve = rep(1:4, each = 4),
   geom_text(aes(label=value), position=position_dodge(width=0.7), vjust=-0.25, size = 3) +
   theme_bw()
 ```
+
+```{r warning=F, message=F}
+conser <- data.frame(type = rep(c("A", "B", "C", "D"), each = 3), 
+                     ratio = c(0.1, 0.2, 0.7, 
+                               0.2, 0.3, 0.5,
+                               0.3, 0.1, 0.6,
+                               0.5, 0.2, 0.3), 
+                     answer = rep(c("a", "b", "c"), 4))
+conser %>% 
+  ggplot( aes(x = type, y = ratio, fill = answer)) + 
+  geom_col(color = "black", size = 0.2)+
+  theme_bw()+
+  xlab("") + 
+  ylab("Percent (%)") +
+  theme(legend.title=element_blank(),legend.position="bottom") +
+  scale_fill_manual(values = c("#AED6F1", "#3498DB","#21618C"), labels = c("Not Used", "Not sure", "Used"))+
+  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 10))+
+  theme(axis.text.x = element_text(size = 11))
+```
+
 
 
 #### Multi-row x-axis labels {-}
@@ -444,7 +508,67 @@ ggplot() + geom_sf(data = tmp) +
 
 ```
 
+
 + Example 2
+```{r message = F, warning=F}
+library(usmap)
+library(sf)
+huc8 <- readRDS("data/huc8.rds")
+
+d <- us_map("counties") %>% dplyr::filter(abbr == "IA")
+d$county <- substr(d$county, 1, nchar(d$county) - 7)   # remove string " county"
+d$group <- d$county
+d <- d %>% arrange(group)
+
+set.seed(123)
+database <- data.frame(county = d$county %>% unique(), 
+                       countyid = 1:99, 
+                       num = 0) 
+
+for(i in 1:99)
+{
+  database$num[i] <- sample(c(0, round(100 * rbeta(1, 2, 10))), 1)
+}
+
+database <- database %>% 
+  mutate(numrange = cut(num, breaks = c(-1, 1, 3, 10, 20, 300), 
+                     labels = c(paste0("C", 1:5))))
+
+colorvalues <- c("C1" = "#FFFFFF", "C2" = "#e7f9e0", "C3" = "#d0f3c1", 
+                 "C4" = "#a1e784", "C5" = "#5bd629")
+
+# polygon 
+USS <- lapply(split(d, d$county), function(x) {
+  if(length(table(x$piece)) == 1)
+  {
+    st_polygon(list(cbind(x$x, x$y)))
+  }
+  else
+  {
+    st_multipolygon(list(lapply(split(x, x$piece), function(y) cbind(y$x, y$y))))
+  }
+})
+
+tmp  <- st_sfc(USS, crs = usmap_crs()@projargs)
+tmp  <- st_sf(data.frame(database, geometry = tmp))
+tmp$centroids <- st_centroid(tmp$geometry)
+
+
+huc8$centroids <- st_centroid(huc8$geometry)
+
+ggplot() + geom_sf(data = tmp, aes(fill = numrange), color = "grey") +
+  geom_sf(data = huc8, color = "#1660CF", fill = "#FFFFFF00") + 
+  geom_sf_text(aes(label = SUBBASIN, geometry = centroids), colour = "#0563F0", 
+               size = 2.5, data = huc8, fontface = "bold") + 
+  scale_fill_manual(values = colorvalues, 
+                    labels = c("0", "1 ~ 3", "4 ~ 10", "11 ~ 20", ">20")) + 
+  guides(fill = guide_legend(title = "Count")) + 
+  theme_void() + 
+  theme(plot.title = element_text(hjust = 0.5), legend.position="bottom")
+
+```
+
++ Example 3
 ```{r message = F, warning=F}
 library(usmap)
 library(sf)
