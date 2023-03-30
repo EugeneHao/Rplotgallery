@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Hao Sun" />
 
 
-<meta name="date" content="2023-03-26" />
+<meta name="date" content="2023-03-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -769,7 +769,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-24"><a href="r-plot-gallery.html#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Reduction Rate of Treatment Compared With Placebo&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb9-25"><a href="r-plot-gallery.html#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>), </span>
 <span id="cb9-26"><a href="r-plot-gallery.html#cb9-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">text=</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="line-chart" class="section level4 unnumbered hasAnchor">
 <h4>Line Chart<a href="r-plot-gallery.html#line-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -787,8 +787,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-12"><a href="r-plot-gallery.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">group =</span> <span class="st">&quot;type&quot;</span>)<span class="sc">+</span></span>
 <span id="cb10-13"><a href="r-plot-gallery.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title=</span><span class="fu">element_blank</span>(),<span class="at">legend.position=</span><span class="st">&quot;right&quot;</span>) <span class="sc">+</span></span>
 <span id="cb10-14"><a href="r-plot-gallery.html#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="dv">2016</span>), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="864" style="display: block; margin: auto;" /></p>
-<p>Example 2 {-}</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p>Example 2</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="r-plot-gallery.html#cb11-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2001</span><span class="sc">:</span><span class="dv">2021</span>, <span class="dv">4</span>),</span>
 <span id="cb11-2"><a href="r-plot-gallery.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">profit =</span> <span class="fu">rnorm</span>(<span class="dv">84</span>, <span class="at">sd =</span> <span class="dv">50</span>) <span class="sc">+</span> <span class="fu">c</span>((<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>) <span class="sc">*</span> <span class="dv">5</span>, (<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>) <span class="sc">*</span> <span class="dv">10</span>, (<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>) <span class="sc">*</span> <span class="dv">15</span>, (<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>) <span class="sc">*</span> <span class="dv">20</span>), </span>
 <span id="cb11-3"><a href="r-plot-gallery.html#cb11-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">crop =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;corn&quot;</span>, <span class="st">&quot;rice&quot;</span>, <span class="st">&quot;soybean&quot;</span>, <span class="st">&quot;wheat&quot;</span>), <span class="at">each =</span> <span class="dv">21</span>), </span>
@@ -824,7 +824,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-33"><a href="r-plot-gallery.html#cb11-33" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">c</span>(<span class="st">&quot;Corn&quot;</span>, <span class="st">&quot;Rice&quot;</span>, <span class="st">&quot;Soybean&quot;</span>, <span class="st">&quot;Wheat&quot;</span>)</span>
 <span id="cb11-34"><a href="r-plot-gallery.html#cb11-34" aria-hidden="true" tabindex="-1"></a>         ))) <span class="sc">+</span></span>
 <span id="cb11-35"><a href="r-plot-gallery.html#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="boxplot-with-regression-result" class="section level4 unnumbered hasAnchor">
 <h4>Boxplot with Regression Result<a href="r-plot-gallery.html#boxplot-with-regression-result" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -838,7 +838,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-8"><a href="r-plot-gallery.html#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Yield vs O3&quot;</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;O3&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
 <span id="cb12-9"><a href="r-plot-gallery.html#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb12-10"><a href="r-plot-gallery.html#cb12-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.y=</span><span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="pirate-plot" class="section level4 unnumbered hasAnchor">
 <h4>Pirate Plot<a href="r-plot-gallery.html#pirate-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -851,7 +851,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-7"><a href="r-plot-gallery.html#cb13-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">theme =</span> <span class="dv">2</span>,   <span class="co"># change theme, from 1 to 4</span></span>
 <span id="cb13-8"><a href="r-plot-gallery.html#cb13-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">pal =</span> <span class="st">&quot;decision&quot;</span>, <span class="co"># use piratepal(palette = &quot;all&quot;) to check available palettes </span></span>
 <span id="cb13-9"><a href="r-plot-gallery.html#cb13-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">bar.f.o =</span> <span class="fl">0.2</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="beeswarm-plot" class="section level4 unnumbered hasAnchor">
 <h4>Beeswarm plot<a href="r-plot-gallery.html#beeswarm-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -862,7 +862,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-5"><a href="r-plot-gallery.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_beeswarm</span>() <span class="sc">+</span></span>
 <span id="cb14-6"><a href="r-plot-gallery.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
 <span id="cb14-7"><a href="r-plot-gallery.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="bar-plot" class="section level4 unnumbered hasAnchor">
 <h4>Bar Plot<a href="r-plot-gallery.html#bar-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -893,7 +893,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-25"><a href="r-plot-gallery.html#cb15-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Pence&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb15-26"><a href="r-plot-gallery.html#cb15-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
 <span id="cb15-27"><a href="r-plot-gallery.html#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>), <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="864" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-plot-gallery.html#cb16-1" aria-hidden="true" tabindex="-1"></a>getrank <span class="ot">&lt;-</span> <span class="cf">function</span>(data)</span>
 <span id="cb16-2"><a href="r-plot-gallery.html#cb16-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb16-3"><a href="r-plot-gallery.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  group <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data)<span class="sc">/</span><span class="dv">4</span></span>
@@ -934,7 +934,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-38"><a href="r-plot-gallery.html#cb16-38" aria-hidden="true" tabindex="-1"></a>             <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="sc">+</span></span>
 <span id="cb16-39"><a href="r-plot-gallery.html#cb16-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span>value), <span class="at">position=</span><span class="fu">position_dodge</span>(<span class="at">width=</span><span class="fl">0.7</span>), <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.25</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb16-40"><a href="r-plot-gallery.html#cb16-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="864" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-plot-gallery.html#cb17-1" aria-hidden="true" tabindex="-1"></a>conser <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>), <span class="at">each =</span> <span class="dv">3</span>), </span>
 <span id="cb17-2"><a href="r-plot-gallery.html#cb17-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ratio =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.7</span>, </span>
 <span id="cb17-3"><a href="r-plot-gallery.html#cb17-3" aria-hidden="true" tabindex="-1"></a>                               <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>,</span>
@@ -951,7 +951,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-14"><a href="r-plot-gallery.html#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#AED6F1&quot;</span>, <span class="st">&quot;#3498DB&quot;</span>,<span class="st">&quot;#21618C&quot;</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Not Used&quot;</span>, <span class="st">&quot;Not sure&quot;</span>, <span class="st">&quot;Used&quot;</span>))<span class="sc">+</span></span>
 <span id="cb17-15"><a href="r-plot-gallery.html#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="cf">function</span>(x) stringr<span class="sc">::</span><span class="fu">str_wrap</span>(x, <span class="at">width =</span> <span class="dv">10</span>))<span class="sc">+</span></span>
 <span id="cb17-16"><a href="r-plot-gallery.html#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="multi-row-x-axis-labels" class="section level4 unnumbered hasAnchor">
 <h4>Multi-row x-axis labels<a href="r-plot-gallery.html#multi-row-x-axis-labels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -972,7 +972,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-15"><a href="r-plot-gallery.html#cb18-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb18-16"><a href="r-plot-gallery.html#cb18-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb18-17"><a href="r-plot-gallery.html#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="864" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-plot-gallery.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span>  </span>
 <span id="cb19-2"><a href="r-plot-gallery.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>  </span>
 <span id="cb19-3"><a href="r-plot-gallery.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">paste0</span>(<span class="st">&quot;&lt;span style=&#39;font-size: 11pt&#39;&gt;This is the axis of&lt;/span&gt;&lt;br&gt;</span></span>
@@ -981,7 +981,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb19-6"><a href="r-plot-gallery.html#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="st">                  &lt;span style=&#39;font-size: 7pt&#39;&gt;mpg&lt;/span&gt;&quot;</span>)) <span class="sc">+</span>  </span>
 <span id="cb19-7"><a href="r-plot-gallery.html#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title.x =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(),</span>
 <span id="cb19-8"><a href="r-plot-gallery.html#cb19-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>())</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="calendar" class="section level4 unnumbered hasAnchor">
 <h4>Calendar<a href="r-plot-gallery.html#calendar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1000,7 +1000,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb20-13"><a href="r-plot-gallery.html#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">x =</span> .x<span class="sc">+</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">13</span>)<span class="sc">/</span><span class="dv">2</span>, <span class="at">y =</span> .y<span class="sc">+</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">9</span>)<span class="sc">/</span><span class="dv">2</span>, <span class="at">fill =</span> n), <span class="at">colour =</span> <span class="st">&quot;grey50&quot;</span>) <span class="sc">+</span></span>
 <span id="cb20-14"><a href="r-plot-gallery.html#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">name =</span> <span class="st">&quot;&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;RdYlBu&quot;</span>) <span class="ot">-&gt;</span> p2.sale </span>
 <span id="cb20-15"><a href="r-plot-gallery.html#cb20-15" aria-hidden="true" tabindex="-1"></a>  sugrrants<span class="sc">::</span><span class="fu">prettify</span>(p2.sale, <span class="at">label =</span> <span class="fu">c</span>(<span class="st">&quot;label&quot;</span>, <span class="st">&quot;text&quot;</span>, <span class="st">&quot;text2&quot;</span>)) <span class="co"># label: month and year; text: weekday at the bottom; text2: day of month</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-23-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="correlation-plot" class="section level4 unnumbered hasAnchor">
 <h4>Correlation Plot<a href="r-plot-gallery.html#correlation-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1008,7 +1008,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-2"><a href="r-plot-gallery.html#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="r-plot-gallery.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars) <span class="sc">%&gt;%</span> </span>
 <span id="cb21-4"><a href="r-plot-gallery.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  corrplot<span class="sc">::</span><span class="fu">corrplot</span>(., <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>, <span class="at">order =</span> <span class="st">&quot;hclust&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="survival-analysis" class="section level4 unnumbered hasAnchor">
 <h4>Survival Analysis<a href="r-plot-gallery.html#survival-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1035,7 +1035,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb22-21"><a href="r-plot-gallery.html#cb22-21" aria-hidden="true" tabindex="-1"></a>p1<span class="sc">$</span>plot <span class="ot">&lt;-</span> p1<span class="sc">$</span>plot <span class="sc">+</span> <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">750</span>, <span class="at">y =</span> <span class="dv">70</span>, <span class="co"># 注明x和y轴的位置</span></span>
 <span id="cb22-22"><a href="r-plot-gallery.html#cb22-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">&quot;Chisq = 10.3 on 1 degrees of freedom&quot;</span>) <span class="co"># 添加文本信息</span></span>
 <span id="cb22-23"><a href="r-plot-gallery.html#cb22-23" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="864" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="r-plot-gallery.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsurvfit)</span>
 <span id="cb23-2"><a href="r-plot-gallery.html#cb23-2" aria-hidden="true" tabindex="-1"></a>mymodel <span class="ot">&lt;-</span> <span class="fu">survfit2</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> surg, <span class="at">data =</span> df_colon)</span>
 <span id="cb23-3"><a href="r-plot-gallery.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1046,10 +1046,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb23-8"><a href="r-plot-gallery.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_risktable</span>() <span class="sc">+</span> <span class="co"># 添加风险表格</span></span>
 <span id="cb23-9"><a href="r-plot-gallery.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb23-10"><a href="r-plot-gallery.html#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-28-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="864" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="r-plot-gallery.html#cb24-1" aria-hidden="true" tabindex="-1"></a>cox_model <span class="ot">&lt;-</span> <span class="fu">coxph</span>(<span class="fu">Surv</span>(time, status) <span class="sc">~</span> sex <span class="sc">+</span> ph.ecog, <span class="at">data =</span> lung)</span>
 <span id="cb24-2"><a href="r-plot-gallery.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggforest</span>(cox_model)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="table-visualization" class="section level4 unnumbered hasAnchor">
 <h4>Table Visualization<a href="r-plot-gallery.html#table-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1409,7 +1409,7 @@ No
 <span id="cb26-3"><a href="r-plot-gallery.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>)) <span class="sc">+</span> </span>
 <span id="cb26-4"><a href="r-plot-gallery.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
 <span id="cb26-5"><a href="r-plot-gallery.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">&quot;A&quot;</span>) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-29-1.png" width="864" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="r-plot-gallery.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2</span></span>
 <span id="cb27-2"><a href="r-plot-gallery.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
 <span id="cb27-3"><a href="r-plot-gallery.html#cb27-3" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">5</span><span class="sc">*</span><span class="dv">10</span>), <span class="at">ncol =</span> <span class="dv">10</span>)</span>
@@ -1417,7 +1417,7 @@ No
 <span id="cb27-5"><a href="r-plot-gallery.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">heatmap</span>(mydata, </span>
 <span id="cb27-6"><a href="r-plot-gallery.html#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Colv = NA, # Rowv = NA,   # hide the clustering </span></span>
 <span id="cb27-7"><a href="r-plot-gallery.html#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;heatmap&quot;</span>, <span class="at">col =</span> <span class="fu">cm.colors</span>(<span class="dv">256</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="compare-two-group-means" class="section level4 unnumbered hasAnchor">
 <h4>Compare Two Group Means<a href="r-plot-gallery.html#compare-two-group-means" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1433,7 +1433,7 @@ No
 <span id="cb28-10"><a href="r-plot-gallery.html#cb28-10" aria-hidden="true" tabindex="-1"></a>mymean_diff <span class="ot">&lt;-</span> <span class="fu">mean_diff</span>(mytest)</span>
 <span id="cb28-11"><a href="r-plot-gallery.html#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-12"><a href="r-plot-gallery.html#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mymean_diff, <span class="at">color.column =</span> Class)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="add-p-value" class="section level4 unnumbered hasAnchor">
 <h4>Add p-value<a href="r-plot-gallery.html#add-p-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1448,7 +1448,7 @@ No
 <span id="cb29-9"><a href="r-plot-gallery.html#cb29-9" aria-hidden="true" tabindex="-1"></a>  ggsignif<span class="sc">::</span><span class="fu">geom_signif</span>(<span class="at">comparisons =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)), </span>
 <span id="cb29-10"><a href="r-plot-gallery.html#cb29-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">y_position =</span> <span class="fl">8.3</span>, </span>
 <span id="cb29-11"><a href="r-plot-gallery.html#cb29-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">tip_length =</span> <span class="dv">0</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-32-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="missing-data-in-time-series" class="section level4 unnumbered hasAnchor">
 <h4>Missing Data in Time Series<a href="r-plot-gallery.html#missing-data-in-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1457,11 +1457,11 @@ No
 </blockquote>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="r-plot-gallery.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(imputeTS)</span>
 <span id="cb30-2"><a href="r-plot-gallery.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot_na_distribution</span>(tsAirgap)   </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="864" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="r-plot-gallery.html#cb31-1" aria-hidden="true" tabindex="-1"></a>data_imputation <span class="ot">&lt;-</span> <span class="fu">na_interpolation</span>(tsAirgap, <span class="at">option =</span> <span class="st">&quot;linear&quot;</span>)    </span>
 <span id="cb31-2"><a href="r-plot-gallery.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># linear interpolation; we can also try spline, stine</span></span>
 <span id="cb31-3"><a href="r-plot-gallery.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot_na_imputations</span>(tsAirgap, data_imputation, tsAirgapComplete)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-35-2.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-2.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="state-map-with-fill-in-color" class="section level4 unnumbered hasAnchor">
 <h4>State Map with Fill-in Color<a href="r-plot-gallery.html#state-map-with-fill-in-color" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1514,9 +1514,9 @@ No
 <span id="cb32-44"><a href="r-plot-gallery.html#cb32-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Iowa&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb32-45"><a href="r-plot-gallery.html#cb32-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>)) <span class="sc">+</span>   <span class="co"># remove legend title</span></span>
 <span id="cb32-46"><a href="r-plot-gallery.html#cb32-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="864" style="display: block; margin: auto;" /></p>
 <ul>
-<li>Example 2</li>
+<li>Example 2 (Add extra polygons)</li>
 </ul>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="r-plot-gallery.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
 <span id="cb33-2"><a href="r-plot-gallery.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -1572,9 +1572,9 @@ No
 <span id="cb33-52"><a href="r-plot-gallery.html#cb33-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">&quot;Count&quot;</span>)) <span class="sc">+</span> </span>
 <span id="cb33-53"><a href="r-plot-gallery.html#cb33-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> </span>
 <span id="cb33-54"><a href="r-plot-gallery.html#cb33-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>), <span class="at">legend.position=</span><span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="864" style="display: block; margin: auto;" /></p>
 <ul>
-<li>Example 3</li>
+<li>Example 3 (Polygon Clusters)</li>
 </ul>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="r-plot-gallery.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
 <span id="cb34-2"><a href="r-plot-gallery.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
@@ -1669,100 +1669,154 @@ No
 <span id="cb34-91"><a href="r-plot-gallery.html#cb34-91" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_fill_manual(values = c(&quot;#67b5e3&quot;,  &quot;#ffada2&quot;,&quot;#1155b6&quot;,</span></span>
 <span id="cb34-92"><a href="r-plot-gallery.html#cb34-92" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                              &quot;#ed4747&quot;, &quot;#cccccc&quot;), guide = guide_none()) +</span></span>
 <span id="cb34-93"><a href="r-plot-gallery.html#cb34-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&#39;none&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="864" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Example 4 (Provide Legend with different patterns)</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="r-plot-gallery.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usmap)</span>
+<span id="cb35-2"><a href="r-plot-gallery.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb35-3"><a href="r-plot-gallery.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="r-plot-gallery.html#cb35-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">us_map</span>(<span class="st">&quot;counties&quot;</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(abbr <span class="sc">==</span> <span class="st">&quot;IA&quot;</span>)</span>
+<span id="cb35-5"><a href="r-plot-gallery.html#cb35-5" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>county <span class="ot">&lt;-</span> <span class="fu">substr</span>(d<span class="sc">$</span>county, <span class="dv">1</span>, <span class="fu">nchar</span>(d<span class="sc">$</span>county) <span class="sc">-</span> <span class="dv">7</span>)</span>
+<span id="cb35-6"><a href="r-plot-gallery.html#cb35-6" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>group <span class="ot">&lt;-</span> d<span class="sc">$</span>county</span>
+<span id="cb35-7"><a href="r-plot-gallery.html#cb35-7" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(group)</span>
+<span id="cb35-8"><a href="r-plot-gallery.html#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb35-9"><a href="r-plot-gallery.html#cb35-9" aria-hidden="true" tabindex="-1"></a>database <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">county =</span> d<span class="sc">$</span>county <span class="sc">%&gt;%</span> <span class="fu">unique</span>(), </span>
+<span id="cb35-10"><a href="r-plot-gallery.html#cb35-10" aria-hidden="true" tabindex="-1"></a>                       <span class="at">Mul =</span> <span class="fu">rnorm</span>(<span class="dv">99</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>))</span>
+<span id="cb35-11"><a href="r-plot-gallery.html#cb35-11" aria-hidden="true" tabindex="-1"></a>database<span class="sc">$</span>Mul[database<span class="sc">$</span>Mul <span class="sc">&gt;</span> <span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="dv">6</span></span>
+<span id="cb35-12"><a href="r-plot-gallery.html#cb35-12" aria-hidden="true" tabindex="-1"></a>database<span class="sc">$</span>Mul[database<span class="sc">$</span>Mul <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">6</span></span>
+<span id="cb35-13"><a href="r-plot-gallery.html#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="r-plot-gallery.html#cb35-14" aria-hidden="true" tabindex="-1"></a>database <span class="ot">&lt;-</span> database <span class="sc">%&gt;%</span></span>
+<span id="cb35-15"><a href="r-plot-gallery.html#cb35-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">MulLv =</span> <span class="fu">cut</span>(Mul, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">6</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="fl">0.5</span>, <span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>),</span>
+<span id="cb35-16"><a href="r-plot-gallery.html#cb35-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">&quot;B&quot;</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">1</span>), <span class="st">&quot;N&quot;</span>, <span class="fu">paste0</span>(<span class="st">&quot;R&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>))))</span>
+<span id="cb35-17"><a href="r-plot-gallery.html#cb35-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-18"><a href="r-plot-gallery.html#cb35-18" aria-hidden="true" tabindex="-1"></a>colorvalues <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">c</span>(<span class="st">&quot;B6&quot;</span> <span class="ot">=</span> <span class="st">&quot;#0000ff&quot;</span>, <span class="st">&quot;B5&quot;</span> <span class="ot">=</span> <span class="st">&quot;#3737f1&quot;</span>, <span class="st">&quot;B4&quot;</span> <span class="ot">=</span> <span class="st">&quot;#4a4aec&quot;</span>, </span>
+<span id="cb35-19"><a href="r-plot-gallery.html#cb35-19" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;B3&quot;</span> <span class="ot">=</span> <span class="st">&quot;#5c5ce7&quot;</span>, <span class="st">&quot;B2&quot;</span> <span class="ot">=</span> <span class="st">&quot;#8181de&quot;</span>, <span class="st">&quot;B1&quot;</span> <span class="ot">=</span> <span class="st">&quot;#a6a6d5&quot;</span>,</span>
+<span id="cb35-20"><a href="r-plot-gallery.html#cb35-20" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;N&quot;</span> <span class="ot">=</span> <span class="st">&quot;#FFFFFF&quot;</span>),</span>
+<span id="cb35-21"><a href="r-plot-gallery.html#cb35-21" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">c</span>(<span class="st">&quot;R6&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ff0000&quot;</span>, <span class="st">&quot;R5&quot;</span> <span class="ot">=</span> <span class="st">&quot;#f13737&quot;</span>, <span class="st">&quot;R4&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ec4a4a&quot;</span>, </span>
+<span id="cb35-22"><a href="r-plot-gallery.html#cb35-22" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&quot;R3&quot;</span> <span class="ot">=</span> <span class="st">&quot;#e75c5c&quot;</span>, <span class="st">&quot;R2&quot;</span> <span class="ot">=</span> <span class="st">&quot;#de8181&quot;</span>, <span class="st">&quot;R1&quot;</span> <span class="ot">=</span> <span class="st">&quot;#d5a6a6&quot;</span>)[<span class="dv">6</span><span class="sc">:</span><span class="dv">1</span>])</span>
+<span id="cb35-23"><a href="r-plot-gallery.html#cb35-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-24"><a href="r-plot-gallery.html#cb35-24" aria-hidden="true" tabindex="-1"></a>USS <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">split</span>(d, d<span class="sc">$</span>county), <span class="cf">function</span>(x) {</span>
+<span id="cb35-25"><a href="r-plot-gallery.html#cb35-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">table</span>(x<span class="sc">$</span>piece)) <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb35-26"><a href="r-plot-gallery.html#cb35-26" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb35-27"><a href="r-plot-gallery.html#cb35-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">cbind</span>(x<span class="sc">$</span>x, x<span class="sc">$</span>y)))</span>
+<span id="cb35-28"><a href="r-plot-gallery.html#cb35-28" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb35-29"><a href="r-plot-gallery.html#cb35-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb35-30"><a href="r-plot-gallery.html#cb35-30" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb35-31"><a href="r-plot-gallery.html#cb35-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_multipolygon</span>(<span class="fu">list</span>(<span class="fu">lapply</span>(<span class="fu">split</span>(x, x<span class="sc">$</span>piece), <span class="cf">function</span>(y) <span class="fu">cbind</span>(y<span class="sc">$</span>x, y<span class="sc">$</span>y))))</span>
+<span id="cb35-32"><a href="r-plot-gallery.html#cb35-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb35-33"><a href="r-plot-gallery.html#cb35-33" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb35-34"><a href="r-plot-gallery.html#cb35-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-35"><a href="r-plot-gallery.html#cb35-35" aria-hidden="true" tabindex="-1"></a>tmp  <span class="ot">&lt;-</span> <span class="fu">st_sfc</span>(USS, <span class="at">crs =</span> <span class="fu">usmap_crs</span>()<span class="sc">@</span>projargs)</span>
+<span id="cb35-36"><a href="r-plot-gallery.html#cb35-36" aria-hidden="true" tabindex="-1"></a>tmp  <span class="ot">&lt;-</span> <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(database, <span class="at">geometry =</span> tmp))</span>
+<span id="cb35-37"><a href="r-plot-gallery.html#cb35-37" aria-hidden="true" tabindex="-1"></a>tmp<span class="sc">$</span>centroids <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(tmp<span class="sc">$</span>geometry)</span>
+<span id="cb35-38"><a href="r-plot-gallery.html#cb35-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-39"><a href="r-plot-gallery.html#cb35-39" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> tmp) <span class="sc">+</span></span>
+<span id="cb35-40"><a href="r-plot-gallery.html#cb35-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_pattern</span>(<span class="fu">aes</span>(<span class="at">fill =</span> MulLv, <span class="at">pattern =</span> MulLv), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,  <span class="at">data =</span> tmp, </span>
+<span id="cb35-41"><a href="r-plot-gallery.html#cb35-41" aria-hidden="true" tabindex="-1"></a>                  <span class="at">pattern_key_scale_factor =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb35-42"><a href="r-plot-gallery.html#cb35-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> county, <span class="at">geometry =</span> centroids), <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">data =</span> tmp) <span class="sc">+</span></span>
+<span id="cb35-43"><a href="r-plot-gallery.html#cb35-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> colorvalues,</span>
+<span id="cb35-44"><a href="r-plot-gallery.html#cb35-44" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot; &gt;= 3&quot;</span>, <span class="st">&quot;[2, 3)&quot;</span>, <span class="st">&quot;[1.5, 2)&quot;</span>, <span class="st">&quot;[1, 1.5)&quot;</span>, <span class="st">&quot;[0.5, 1)&quot;</span>, <span class="st">&quot;[0.1, 0.5)&quot;</span>, <span class="st">&quot;[-0.1, 0.1)&quot;</span>,</span>
+<span id="cb35-45"><a href="r-plot-gallery.html#cb35-45" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;[-0.5, -0.1)&quot;</span>, <span class="st">&quot;[-1, -0.5)&quot;</span>, <span class="st">&quot;[-1.5, -1)&quot;</span>, <span class="st">&quot;[-2, -1.5)&quot;</span>, <span class="st">&quot;[-3, -2)&quot;</span>, <span class="st">&quot;&lt;= -3&quot;</span>)[<span class="dv">13</span><span class="sc">:</span><span class="dv">1</span>]) <span class="sc">+</span></span>
+<span id="cb35-46"><a href="r-plot-gallery.html#cb35-46" aria-hidden="true" tabindex="-1"></a> <span class="fu">scale_pattern_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;stripe&quot;</span>, <span class="dv">6</span>), <span class="fu">rep</span>(<span class="st">&quot;none&quot;</span>, <span class="dv">7</span>)), <span class="at">guide =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-47"><a href="r-plot-gallery.html#cb35-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>, <span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">pattern =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;stripe&quot;</span>, <span class="dv">6</span>), <span class="fu">rep</span>(<span class="st">&quot;none&quot;</span>, <span class="dv">7</span>))))) <span class="sc">+</span></span>
+<span id="cb35-48"><a href="r-plot-gallery.html#cb35-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>), <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>))</span>
+<span id="cb35-49"><a href="r-plot-gallery.html#cb35-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-50"><a href="r-plot-gallery.html#cb35-50" aria-hidden="true" tabindex="-1"></a>g4</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-37-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="animation-plot" class="section level4 unnumbered hasAnchor">
 <h4>Animation plot<a href="r-plot-gallery.html#animation-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="r-plot-gallery.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">capture.output</span>(</span>
-<span id="cb35-2"><a href="r-plot-gallery.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="fu">c</span>(<span class="st">&quot;sf&quot;</span>, <span class="st">&quot;usmap&quot;</span>, <span class="st">&quot;gganimate&quot;</span>, <span class="st">&quot;gifski&quot;</span>), require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb35-3"><a href="r-plot-gallery.html#cb35-3" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb35-4"><a href="r-plot-gallery.html#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="r-plot-gallery.html#cb35-5" aria-hidden="true" tabindex="-1"></a>rawd <span class="ot">&lt;-</span> <span class="fu">us_map</span>(<span class="st">&quot;counties&quot;</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(abbr <span class="sc">==</span> <span class="st">&quot;IA&quot;</span>)</span>
-<span id="cb35-6"><a href="r-plot-gallery.html#cb35-6" aria-hidden="true" tabindex="-1"></a>rawd<span class="sc">$</span>county <span class="ot">&lt;-</span> <span class="fu">substr</span>(rawd<span class="sc">$</span>county, <span class="dv">1</span>, <span class="fu">nchar</span>(rawd<span class="sc">$</span>county) <span class="sc">-</span> <span class="dv">7</span>)</span>
-<span id="cb35-7"><a href="r-plot-gallery.html#cb35-7" aria-hidden="true" tabindex="-1"></a>rawd<span class="sc">$</span>group <span class="ot">&lt;-</span> rawd<span class="sc">$</span>county</span>
-<span id="cb35-8"><a href="r-plot-gallery.html#cb35-8" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> rawd <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(group)</span>
-<span id="cb35-9"><a href="r-plot-gallery.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-10"><a href="r-plot-gallery.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-11"><a href="r-plot-gallery.html#cb35-11" aria-hidden="true" tabindex="-1"></a>database <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">county =</span> <span class="fu">rep</span>(d<span class="sc">$</span>county <span class="sc">%&gt;%</span> <span class="fu">unique</span>(), <span class="dv">20</span>),</span>
-<span id="cb35-12"><a href="r-plot-gallery.html#cb35-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2001</span><span class="sc">:</span><span class="dv">2020</span>, <span class="at">each =</span> <span class="dv">99</span>), </span>
-<span id="cb35-13"><a href="r-plot-gallery.html#cb35-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">Value =</span> <span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">99</span> <span class="sc">*</span> <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">20</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb35-14"><a href="r-plot-gallery.html#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">level =</span> <span class="fu">cut</span>(Value, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">100</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;VeryLow&quot;</span>, <span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>, <span class="st">&quot;VeryHigh&quot;</span>)))</span>
-<span id="cb35-15"><a href="r-plot-gallery.html#cb35-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-16"><a href="r-plot-gallery.html#cb35-16" aria-hidden="true" tabindex="-1"></a>colorvalues <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;VeryHigh&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ed4747&quot;</span>, <span class="st">&quot;High&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ffada2&quot;</span>, <span class="st">&quot;Medium&quot;</span> <span class="ot">=</span> <span class="st">&quot;#cccccc&quot;</span>, <span class="st">&quot;Low&quot;</span> <span class="ot">=</span> <span class="st">&quot;#67b5e3&quot;</span>, <span class="st">&quot;VeryLow&quot;</span> <span class="ot">=</span> <span class="st">&quot;#1155b6&quot;</span>)</span>
-<span id="cb35-17"><a href="r-plot-gallery.html#cb35-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-18"><a href="r-plot-gallery.html#cb35-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-19"><a href="r-plot-gallery.html#cb35-19" aria-hidden="true" tabindex="-1"></a>database <span class="ot">&lt;-</span> database <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year, county)</span>
-<span id="cb35-20"><a href="r-plot-gallery.html#cb35-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-21"><a href="r-plot-gallery.html#cb35-21" aria-hidden="true" tabindex="-1"></a>USS <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">split</span>(d, d<span class="sc">$</span>county), <span class="cf">function</span>(x) {</span>
-<span id="cb35-22"><a href="r-plot-gallery.html#cb35-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">table</span>(x<span class="sc">$</span>piece)) <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb35-23"><a href="r-plot-gallery.html#cb35-23" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb35-24"><a href="r-plot-gallery.html#cb35-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">cbind</span>(x<span class="sc">$</span>x, x<span class="sc">$</span>y)))</span>
-<span id="cb35-25"><a href="r-plot-gallery.html#cb35-25" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb35-26"><a href="r-plot-gallery.html#cb35-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
-<span id="cb35-27"><a href="r-plot-gallery.html#cb35-27" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb35-28"><a href="r-plot-gallery.html#cb35-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_multipolygon</span>(<span class="fu">list</span>(<span class="fu">lapply</span>(<span class="fu">split</span>(x, x<span class="sc">$</span>piece), <span class="cf">function</span>(y) <span class="fu">cbind</span>(y<span class="sc">$</span>x, y<span class="sc">$</span>y))))</span>
-<span id="cb35-29"><a href="r-plot-gallery.html#cb35-29" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb35-30"><a href="r-plot-gallery.html#cb35-30" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb35-31"><a href="r-plot-gallery.html#cb35-31" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-32"><a href="r-plot-gallery.html#cb35-32" aria-hidden="true" tabindex="-1"></a>spdata  <span class="ot">&lt;-</span> <span class="fu">st_sfc</span>(USS, <span class="at">crs =</span> <span class="fu">usmap_crs</span>()<span class="sc">@</span>projargs)</span>
-<span id="cb35-33"><a href="r-plot-gallery.html#cb35-33" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
-<span id="cb35-34"><a href="r-plot-gallery.html#cb35-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(yr <span class="cf">in</span> <span class="dv">2001</span><span class="sc">:</span><span class="dv">2020</span>)</span>
-<span id="cb35-35"><a href="r-plot-gallery.html#cb35-35" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb35-36"><a href="r-plot-gallery.html#cb35-36" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(tmp, <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(database <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(year <span class="sc">==</span> yr), <span class="at">geometry =</span> spdata)))</span>
-<span id="cb35-37"><a href="r-plot-gallery.html#cb35-37" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb35-38"><a href="r-plot-gallery.html#cb35-38" aria-hidden="true" tabindex="-1"></a>tmp<span class="sc">$</span>centroids <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(tmp<span class="sc">$</span>geometry)</span>
-<span id="cb35-39"><a href="r-plot-gallery.html#cb35-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-40"><a href="r-plot-gallery.html#cb35-40" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">cbind</span>(tmp, <span class="fu">do.call</span>(rbind, <span class="fu">st_geometry</span>(tmp<span class="sc">$</span>centroids)) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-41"><a href="r-plot-gallery.html#cb35-41" aria-hidden="true" tabindex="-1"></a>               <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> <span class="fu">setNames</span>(<span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>,<span class="st">&quot;lat&quot;</span>)))</span>
-<span id="cb35-42"><a href="r-plot-gallery.html#cb35-42" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-43"><a href="r-plot-gallery.html#cb35-43" aria-hidden="true" tabindex="-1"></a>originplot <span class="ot">=</span> <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb35-44"><a href="r-plot-gallery.html#cb35-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> level, <span class="at">alpha =</span> <span class="fl">0.4</span>), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,  <span class="at">data =</span> tmp) <span class="sc">+</span></span>
-<span id="cb35-45"><a href="r-plot-gallery.html#cb35-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> colorvalues, <span class="at">guide =</span> <span class="fu">guide_none</span>()) <span class="sc">+</span> </span>
-<span id="cb35-46"><a href="r-plot-gallery.html#cb35-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&#39;none&#39;</span>, <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
-<span id="cb35-47"><a href="r-plot-gallery.html#cb35-47" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-48"><a href="r-plot-gallery.html#cb35-48" aria-hidden="true" tabindex="-1"></a>animateplot <span class="ot">=</span> originplot <span class="sc">+</span>  </span>
-<span id="cb35-49"><a href="r-plot-gallery.html#cb35-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y =</span> lat, <span class="at">x =</span> lon, <span class="at">label =</span> Value), </span>
-<span id="cb35-50"><a href="r-plot-gallery.html#cb35-50" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">4.5</span>, <span class="at">data =</span> tmp) <span class="sc">+</span></span>
-<span id="cb35-51"><a href="r-plot-gallery.html#cb35-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> tmp, </span>
-<span id="cb35-52"><a href="r-plot-gallery.html#cb35-52" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">median</span>(lon), <span class="at">y =</span> <span class="fu">min</span>(lat) <span class="sc">-</span> <span class="fu">abs</span>(<span class="fu">max</span>(lat) <span class="sc">-</span> <span class="fu">min</span>(lat))<span class="sc">/</span><span class="dv">4</span>, </span>
-<span id="cb35-53"><a href="r-plot-gallery.html#cb35-53" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&quot;UR In&quot;</span>, <span class="st">&quot;Iowa&quot;</span>, <span class="st">&quot;In&quot;</span>, year)),</span>
-<span id="cb35-54"><a href="r-plot-gallery.html#cb35-54" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb35-55"><a href="r-plot-gallery.html#cb35-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(<span class="at">states =</span> year) </span>
-<span id="cb35-56"><a href="r-plot-gallery.html#cb35-56" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb35-57"><a href="r-plot-gallery.html#cb35-57" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(animateplot, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(), <span class="at">fps =</span> <span class="dv">5</span>, <span class="at">duration =</span> <span class="dv">10</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-39-1.gif" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="r-plot-gallery.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">capture.output</span>(</span>
+<span id="cb36-2"><a href="r-plot-gallery.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="fu">c</span>(<span class="st">&quot;sf&quot;</span>, <span class="st">&quot;usmap&quot;</span>, <span class="st">&quot;gganimate&quot;</span>, <span class="st">&quot;gifski&quot;</span>), require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb36-3"><a href="r-plot-gallery.html#cb36-3" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb36-4"><a href="r-plot-gallery.html#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="r-plot-gallery.html#cb36-5" aria-hidden="true" tabindex="-1"></a>rawd <span class="ot">&lt;-</span> <span class="fu">us_map</span>(<span class="st">&quot;counties&quot;</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(abbr <span class="sc">==</span> <span class="st">&quot;IA&quot;</span>)</span>
+<span id="cb36-6"><a href="r-plot-gallery.html#cb36-6" aria-hidden="true" tabindex="-1"></a>rawd<span class="sc">$</span>county <span class="ot">&lt;-</span> <span class="fu">substr</span>(rawd<span class="sc">$</span>county, <span class="dv">1</span>, <span class="fu">nchar</span>(rawd<span class="sc">$</span>county) <span class="sc">-</span> <span class="dv">7</span>)</span>
+<span id="cb36-7"><a href="r-plot-gallery.html#cb36-7" aria-hidden="true" tabindex="-1"></a>rawd<span class="sc">$</span>group <span class="ot">&lt;-</span> rawd<span class="sc">$</span>county</span>
+<span id="cb36-8"><a href="r-plot-gallery.html#cb36-8" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> rawd <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(group)</span>
+<span id="cb36-9"><a href="r-plot-gallery.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-10"><a href="r-plot-gallery.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-11"><a href="r-plot-gallery.html#cb36-11" aria-hidden="true" tabindex="-1"></a>database <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">county =</span> <span class="fu">rep</span>(d<span class="sc">$</span>county <span class="sc">%&gt;%</span> <span class="fu">unique</span>(), <span class="dv">20</span>),</span>
+<span id="cb36-12"><a href="r-plot-gallery.html#cb36-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2001</span><span class="sc">:</span><span class="dv">2020</span>, <span class="at">each =</span> <span class="dv">99</span>), </span>
+<span id="cb36-13"><a href="r-plot-gallery.html#cb36-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">Value =</span> <span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">99</span> <span class="sc">*</span> <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">20</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb36-14"><a href="r-plot-gallery.html#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">level =</span> <span class="fu">cut</span>(Value, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">100</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;VeryLow&quot;</span>, <span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;High&quot;</span>, <span class="st">&quot;VeryHigh&quot;</span>)))</span>
+<span id="cb36-15"><a href="r-plot-gallery.html#cb36-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-16"><a href="r-plot-gallery.html#cb36-16" aria-hidden="true" tabindex="-1"></a>colorvalues <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;VeryHigh&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ed4747&quot;</span>, <span class="st">&quot;High&quot;</span> <span class="ot">=</span> <span class="st">&quot;#ffada2&quot;</span>, <span class="st">&quot;Medium&quot;</span> <span class="ot">=</span> <span class="st">&quot;#cccccc&quot;</span>, <span class="st">&quot;Low&quot;</span> <span class="ot">=</span> <span class="st">&quot;#67b5e3&quot;</span>, <span class="st">&quot;VeryLow&quot;</span> <span class="ot">=</span> <span class="st">&quot;#1155b6&quot;</span>)</span>
+<span id="cb36-17"><a href="r-plot-gallery.html#cb36-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-18"><a href="r-plot-gallery.html#cb36-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="r-plot-gallery.html#cb36-19" aria-hidden="true" tabindex="-1"></a>database <span class="ot">&lt;-</span> database <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year, county)</span>
+<span id="cb36-20"><a href="r-plot-gallery.html#cb36-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-21"><a href="r-plot-gallery.html#cb36-21" aria-hidden="true" tabindex="-1"></a>USS <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">split</span>(d, d<span class="sc">$</span>county), <span class="cf">function</span>(x) {</span>
+<span id="cb36-22"><a href="r-plot-gallery.html#cb36-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(<span class="fu">table</span>(x<span class="sc">$</span>piece)) <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb36-23"><a href="r-plot-gallery.html#cb36-23" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb36-24"><a href="r-plot-gallery.html#cb36-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_polygon</span>(<span class="fu">list</span>(<span class="fu">cbind</span>(x<span class="sc">$</span>x, x<span class="sc">$</span>y)))</span>
+<span id="cb36-25"><a href="r-plot-gallery.html#cb36-25" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-26"><a href="r-plot-gallery.html#cb36-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb36-27"><a href="r-plot-gallery.html#cb36-27" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb36-28"><a href="r-plot-gallery.html#cb36-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_multipolygon</span>(<span class="fu">list</span>(<span class="fu">lapply</span>(<span class="fu">split</span>(x, x<span class="sc">$</span>piece), <span class="cf">function</span>(y) <span class="fu">cbind</span>(y<span class="sc">$</span>x, y<span class="sc">$</span>y))))</span>
+<span id="cb36-29"><a href="r-plot-gallery.html#cb36-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-30"><a href="r-plot-gallery.html#cb36-30" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb36-31"><a href="r-plot-gallery.html#cb36-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-32"><a href="r-plot-gallery.html#cb36-32" aria-hidden="true" tabindex="-1"></a>spdata  <span class="ot">&lt;-</span> <span class="fu">st_sfc</span>(USS, <span class="at">crs =</span> <span class="fu">usmap_crs</span>()<span class="sc">@</span>projargs)</span>
+<span id="cb36-33"><a href="r-plot-gallery.html#cb36-33" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb36-34"><a href="r-plot-gallery.html#cb36-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(yr <span class="cf">in</span> <span class="dv">2001</span><span class="sc">:</span><span class="dv">2020</span>)</span>
+<span id="cb36-35"><a href="r-plot-gallery.html#cb36-35" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb36-36"><a href="r-plot-gallery.html#cb36-36" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(tmp, <span class="fu">st_sf</span>(<span class="fu">data.frame</span>(database <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(year <span class="sc">==</span> yr), <span class="at">geometry =</span> spdata)))</span>
+<span id="cb36-37"><a href="r-plot-gallery.html#cb36-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-38"><a href="r-plot-gallery.html#cb36-38" aria-hidden="true" tabindex="-1"></a>tmp<span class="sc">$</span>centroids <span class="ot">&lt;-</span> <span class="fu">st_centroid</span>(tmp<span class="sc">$</span>geometry)</span>
+<span id="cb36-39"><a href="r-plot-gallery.html#cb36-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-40"><a href="r-plot-gallery.html#cb36-40" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">cbind</span>(tmp, <span class="fu">do.call</span>(rbind, <span class="fu">st_geometry</span>(tmp<span class="sc">$</span>centroids)) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-41"><a href="r-plot-gallery.html#cb36-41" aria-hidden="true" tabindex="-1"></a>               <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> <span class="fu">setNames</span>(<span class="fu">c</span>(<span class="st">&quot;lon&quot;</span>,<span class="st">&quot;lat&quot;</span>)))</span>
+<span id="cb36-42"><a href="r-plot-gallery.html#cb36-42" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-43"><a href="r-plot-gallery.html#cb36-43" aria-hidden="true" tabindex="-1"></a>originplot <span class="ot">=</span> <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb36-44"><a href="r-plot-gallery.html#cb36-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> level, <span class="at">alpha =</span> <span class="fl">0.4</span>), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,  <span class="at">data =</span> tmp) <span class="sc">+</span></span>
+<span id="cb36-45"><a href="r-plot-gallery.html#cb36-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> colorvalues, <span class="at">guide =</span> <span class="fu">guide_none</span>()) <span class="sc">+</span> </span>
+<span id="cb36-46"><a href="r-plot-gallery.html#cb36-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&#39;none&#39;</span>, <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb36-47"><a href="r-plot-gallery.html#cb36-47" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-48"><a href="r-plot-gallery.html#cb36-48" aria-hidden="true" tabindex="-1"></a>animateplot <span class="ot">=</span> originplot <span class="sc">+</span>  </span>
+<span id="cb36-49"><a href="r-plot-gallery.html#cb36-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y =</span> lat, <span class="at">x =</span> lon, <span class="at">label =</span> Value), </span>
+<span id="cb36-50"><a href="r-plot-gallery.html#cb36-50" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="fl">4.5</span>, <span class="at">data =</span> tmp) <span class="sc">+</span></span>
+<span id="cb36-51"><a href="r-plot-gallery.html#cb36-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> tmp, </span>
+<span id="cb36-52"><a href="r-plot-gallery.html#cb36-52" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">median</span>(lon), <span class="at">y =</span> <span class="fu">min</span>(lat) <span class="sc">-</span> <span class="fu">abs</span>(<span class="fu">max</span>(lat) <span class="sc">-</span> <span class="fu">min</span>(lat))<span class="sc">/</span><span class="dv">4</span>, </span>
+<span id="cb36-53"><a href="r-plot-gallery.html#cb36-53" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">&quot;UR In&quot;</span>, <span class="st">&quot;Iowa&quot;</span>, <span class="st">&quot;In&quot;</span>, year)),</span>
+<span id="cb36-54"><a href="r-plot-gallery.html#cb36-54" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb36-55"><a href="r-plot-gallery.html#cb36-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transition_states</span>(<span class="at">states =</span> year) </span>
+<span id="cb36-56"><a href="r-plot-gallery.html#cb36-56" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-57"><a href="r-plot-gallery.html#cb36-57" aria-hidden="true" tabindex="-1"></a><span class="fu">animate</span>(animateplot, <span class="at">renderer =</span> <span class="fu">gifski_renderer</span>(), <span class="at">fps =</span> <span class="dv">5</span>, <span class="at">duration =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-38-1.gif" style="display: block; margin: auto;" /></p>
 </div>
 <div id="dumbbell-chart" class="section level4 unnumbered hasAnchor">
 <h4>Dumbbell Chart<a href="r-plot-gallery.html#dumbbell-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="r-plot-gallery.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalt)</span>
-<span id="cb36-2"><a href="r-plot-gallery.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
-<span id="cb36-3"><a href="r-plot-gallery.html#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="r-plot-gallery.html#cb36-4" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">type =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], </span>
-<span id="cb36-5"><a href="r-plot-gallery.html#cb36-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">pre =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>), </span>
-<span id="cb36-6"><a href="r-plot-gallery.html#cb36-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">post =</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">60</span>, <span class="dv">80</span>, <span class="dv">80</span>))</span>
-<span id="cb36-7"><a href="r-plot-gallery.html#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-8"><a href="r-plot-gallery.html#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mydata, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">x =</span> pre, <span class="at">xend =</span> post)) <span class="sc">+</span> </span>
-<span id="cb36-9"><a href="r-plot-gallery.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dumbbell</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
-<span id="cb36-10"><a href="r-plot-gallery.html#cb36-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;grey85&quot;</span>, <span class="co"># 连接两点的条带颜色</span></span>
-<span id="cb36-11"><a href="r-plot-gallery.html#cb36-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour_x =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="co"># pre的颜色</span></span>
-<span id="cb36-12"><a href="r-plot-gallery.html#cb36-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour_xend =</span> <span class="st">&quot;forestgreen&quot;</span>, <span class="co"># post的颜色</span></span>
-<span id="cb36-13"><a href="r-plot-gallery.html#cb36-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">dot_guide =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb36-14"><a href="r-plot-gallery.html#cb36-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">dot_guide_size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb36-15"><a href="r-plot-gallery.html#cb36-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
-<span id="cb36-16"><a href="r-plot-gallery.html#cb36-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>, </span>
-<span id="cb36-17"><a href="r-plot-gallery.html#cb36-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Dumbbell charts&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb36-18"><a href="r-plot-gallery.html#cb36-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ipsum</span>() <span class="sc">+</span>    <span class="co"># from hrbrthemes package</span></span>
-<span id="cb36-19"><a href="r-plot-gallery.html#cb36-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="864" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="r-plot-gallery.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalt)</span>
+<span id="cb37-2"><a href="r-plot-gallery.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
+<span id="cb37-3"><a href="r-plot-gallery.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="r-plot-gallery.html#cb37-4" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">type =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], </span>
+<span id="cb37-5"><a href="r-plot-gallery.html#cb37-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">pre =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>), </span>
+<span id="cb37-6"><a href="r-plot-gallery.html#cb37-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">post =</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">60</span>, <span class="dv">80</span>, <span class="dv">80</span>))</span>
+<span id="cb37-7"><a href="r-plot-gallery.html#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="r-plot-gallery.html#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mydata, <span class="fu">aes</span>(<span class="at">y =</span> type, <span class="at">x =</span> pre, <span class="at">xend =</span> post)) <span class="sc">+</span> </span>
+<span id="cb37-9"><a href="r-plot-gallery.html#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dumbbell</span>(<span class="at">size =</span> <span class="dv">3</span>, </span>
+<span id="cb37-10"><a href="r-plot-gallery.html#cb37-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;grey85&quot;</span>, <span class="co"># 连接两点的条带颜色</span></span>
+<span id="cb37-11"><a href="r-plot-gallery.html#cb37-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour_x =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="co"># pre的颜色</span></span>
+<span id="cb37-12"><a href="r-plot-gallery.html#cb37-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour_xend =</span> <span class="st">&quot;forestgreen&quot;</span>, <span class="co"># post的颜色</span></span>
+<span id="cb37-13"><a href="r-plot-gallery.html#cb37-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">dot_guide =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb37-14"><a href="r-plot-gallery.html#cb37-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">dot_guide_size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb37-15"><a href="r-plot-gallery.html#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb37-16"><a href="r-plot-gallery.html#cb37-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb37-17"><a href="r-plot-gallery.html#cb37-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Dumbbell charts&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb37-18"><a href="r-plot-gallery.html#cb37-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ipsum</span>() <span class="sc">+</span>    <span class="co"># from hrbrthemes package</span></span>
+<span id="cb37-19"><a href="r-plot-gallery.html#cb37-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="864" style="display: block; margin: auto;" /></p>
 </div>
 <div id="encircle-points" class="section level4 unnumbered hasAnchor">
 <h4>Encircle Points<a href="r-plot-gallery.html#encircle-points" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="r-plot-gallery.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width)) <span class="sc">+</span> </span>
-<span id="cb37-2"><a href="r-plot-gallery.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb37-3"><a href="r-plot-gallery.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_encircle</span>(<span class="at">data =</span> <span class="fu">subset</span>(iris, Sepal.Width <span class="sc">&lt;</span> <span class="fl">2.5</span> <span class="sc">&amp;</span> Sepal.Length <span class="sc">&gt;</span> <span class="fl">5.5</span>), <span class="at">s_shape =</span> <span class="dv">0</span>) <span class="sc">+</span>  <span class="co"># encircle points </span></span>
-<span id="cb37-4"><a href="r-plot-gallery.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">subset</span>(iris, Sepal.Width <span class="sc">&lt;</span> <span class="fl">2.5</span> <span class="sc">&amp;</span> Sepal.Length <span class="sc">&gt;</span> <span class="fl">5.5</span>),   <span class="co"># mark as blue </span></span>
-<span id="cb37-5"><a href="r-plot-gallery.html#cb37-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="fl">2.5</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="864" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="r-plot-gallery.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width)) <span class="sc">+</span> </span>
+<span id="cb38-2"><a href="r-plot-gallery.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb38-3"><a href="r-plot-gallery.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_encircle</span>(<span class="at">data =</span> <span class="fu">subset</span>(iris, Sepal.Width <span class="sc">&lt;</span> <span class="fl">2.5</span> <span class="sc">&amp;</span> Sepal.Length <span class="sc">&gt;</span> <span class="fl">5.5</span>), <span class="at">s_shape =</span> <span class="dv">0</span>) <span class="sc">+</span>  <span class="co"># encircle points </span></span>
+<span id="cb38-4"><a href="r-plot-gallery.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">subset</span>(iris, Sepal.Width <span class="sc">&lt;</span> <span class="fl">2.5</span> <span class="sc">&amp;</span> Sepal.Length <span class="sc">&gt;</span> <span class="fl">5.5</span>),   <span class="co"># mark as blue </span></span>
+<span id="cb38-5"><a href="r-plot-gallery.html#cb38-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="fl">2.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="864" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
